@@ -1,5 +1,7 @@
 import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
 import { useNavigate, useLocation } from 'react-router-dom';
+import ThemeModeButton from './ThemeModeButton';
+
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -15,6 +17,7 @@ const Navbar = () => {
   return (
     <AppBar position="static">
       <Toolbar>
+        <ThemeModeButton/>
         <Typography
           variant="h4"
           component="div"
