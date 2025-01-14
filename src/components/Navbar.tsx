@@ -1,51 +1,150 @@
-import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
-import { useNavigate, useLocation } from 'react-router-dom';
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
+import MenuItem from '@mui/material/MenuItem';
+import { useLocation, useNavigate } from 'react-router-dom';
 import ThemeModeButton from './ThemeModeButton';
+import { Stack } from '@mui/material';
+import profilePic from '../images/headshot.jpeg'
 
+const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-const Navbar = () => {
+function ResponsiveAppBar() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+
   const navItems = [
     { label: 'Home', path: '/' },
-    { label: 'About', path: '/about' },
+    { label: 'Experience', path: '/experience' },
     { label: 'Projects', path: '/projects' },
+    { label: 'Education', path: '/education' },
     { label: 'Contact', path: '/contact' },
   ];
 
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
+  // @ts-ignore
+  const menuItemClicked= (item) => {
+    navigate(item.path);
+    handleCloseNavMenu();
+    console.log("menu item clicked")
+  }
+
   return (
     <AppBar position="static">
-      <Toolbar>
-        <ThemeModeButton/>
-        <Typography
-          variant="h4"
-          component="div"
-          sx={{ flexGrow: 1, cursor: 'pointer' }}
-          onClick={() => navigate('/')}
-        >
-          Brady Spears
-        </Typography>
-        <Box>
-          {navItems.map((item) => (
-            <Button
-              key={item.path}
+      <Container sx={{width: "100vw", px: "12px"}} disableGutters>
+        <Toolbar disableGutters sx={{"marginRight": "0px", "marginLeft": "0px"}}>
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            sx={{
+              mr: 2,
+              display: { xs: 'none', md: 'flex' },
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+            Brady Spears
+          </Typography>
+
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
               color="inherit"
-              onClick={() => navigate(item.path)}
-              sx={{
-                mx: 1,
-                fontSize: '1.5rem',
-                textTransform: 'none',
-                borderBottom: location.pathname === item.path ? '2px solid white' : 'none',
-              }}
             >
-              {item.label}
-            </Button>
-          ))}
-        </Box>
-      </Toolbar>
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{ display: { xs: 'block', md: 'none' } }}
+            >
+              {navItems.map((item) => (
+                <MenuItem key={item.label} onClick={() => menuItemClicked(item)}>
+                  <Typography sx={{ textAlign: 'center' }}>{item.label}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+          <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+            Brady Spears
+          </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', lg: 'flex' } }}>
+            {navItems.map((item) => (
+              <Button
+                key={item.label}
+                onClick={() => navigate(item.path)}
+                sx={{ my: 2, color: 'white', display: 'block', borderBottom: location.pathname === item.path ? '2px solid white' : 'none',}}
+              >
+                {item.label}
+              </Button>
+            ))}
+          </Box>
+          <Stack direction={"row"} sx={{ flexGrow: 0 }}>
+            <ThemeModeButton/>
+            <Avatar alt="Brady Spears" src={profilePic} />
+          </Stack>
+        </Toolbar>
+      </Container>
     </AppBar>
   );
-};
-
-export default Navbar;
+}
+export default ResponsiveAppBar;

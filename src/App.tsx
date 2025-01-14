@@ -1,14 +1,13 @@
 import { Routes, Route } from 'react-router-dom';
 import { Container, createTheme, CssBaseline, ThemeOptions, ThemeProvider } from '@mui/material';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar'
 import Home from './pages/Home';
-import About from './pages/About';
+import Experience from './pages/Experience';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import { useAppSelector } from './state/Hooks';
+import { Education } from './pages/Education';
 
-// @ts-expect-error
-let theme = createTheme({});
 
 const DarkTheme: ThemeOptions = createTheme({
     palette: {
@@ -46,9 +45,10 @@ function App() {
         <Container sx={{ mt: 4 }}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/experience" element={<Experience />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/education" element={<Education/>} />
           </Routes>
         </Container>
       </Container>
