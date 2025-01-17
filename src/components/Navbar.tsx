@@ -22,12 +22,18 @@ function ResponsiveAppBar() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  type navItem = {
+    label: string;
+    path: string;
+  }
+
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
   const navItems = [
     { label: 'Home', path: '/' },
     { label: 'Experience', path: '/experience' },
+    { label: 'Skills', path: '/skills'},
     { label: 'Projects', path: '/projects' },
     { label: 'Education', path: '/education' },
     { label: 'Contact', path: '/contact' },
@@ -48,17 +54,34 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
-  // @ts-ignore
-  const menuItemClicked= (item) => {
+  // @ts-expec-error: no explicit typing
+  const menuItemClicked = (item: navItem) => {
     navigate(item.path);
     handleCloseNavMenu();
     console.log("menu item clicked")
   }
 
   return (
-    <AppBar position="static">
-      <Container sx={{width: "100vw", px: "12px"}} disableGutters>
-        <Toolbar disableGutters sx={{"marginRight": "0px", "marginLeft": "0px"}}>
+    <AppBar position="static" sx={{width: "100%", overflow: "hidden", px: 2}}>
+      <Container
+        sx={{
+          
+          width: '100%', // Ensure it doesn't exceed the viewport width
+          maxWidth: '100%', // Prevent overflow
+          margin: '0 auto', // Center the container
+        }}
+        disableGutters
+      >
+        <Toolbar 
+          disableGutters 
+          sx={{ 
+            marginRight: "0px", 
+            marginLeft: "0px",
+            display: 'flex',
+            justifyContent: 'space-between'
+          }}
+        >
+          {/* Desktop Logo */}
           <Typography
             variant="h6"
             noWrap
@@ -68,7 +91,6 @@ function ResponsiveAppBar() {
               display: { xs: 'none', md: 'flex' },
               fontFamily: 'monospace',
               fontWeight: 700,
-              letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
             }}
@@ -76,7 +98,13 @@ function ResponsiveAppBar() {
             Brady Spears
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          {/* Mobile Layout - Three equal sections */}
+          {/* Left Section - Menu Button */}
+          <Box sx={{ 
+            display: { xs: 'flex', md: 'none' },
+            flex: '1 1 0',
+            justifyContent: 'flex-start'
+          }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -110,35 +138,66 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            Brady Spears
-          </Typography>
+
+          {/* Center Section - Typography */}
+          <Box sx={{ 
+            display: { xs: 'flex', md: 'none' },
+            flex: '1 1 0',
+            justifyContent: 'center'
+          }}>
+            <Typography
+              variant="h5"
+              noWrap
+              component="a"
+              sx={{
+                fontFamily: 'monospace',
+                fontWeight: 700,
+                color: 'inherit',
+                textDecoration: 'none',
+              }}
+            >
+              Brady Spears
+            </Typography>
+          </Box>
+
+          {/* Right Section - Theme Button and Avatar */}
+          <Box sx={{ 
+            display: { xs: 'flex', md: 'none' },
+            flex: '1 1 0',
+            justifyContent: 'flex-end'
+          }}>
+            <Stack direction="row" spacing={1}>
+              <ThemeModeButton/>
+              <Avatar alt="Brady Spears" src={profilePic} />
+            </Stack>
+          </Box>
+
+          {/* Desktop Navigation */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', lg: 'flex' } }}>
             {navItems.map((item) => (
               <Button
                 key={item.label}
                 onClick={() => navigate(item.path)}
-                sx={{ my: 2, color: 'white', display: 'block', borderBottom: location.pathname === item.path ? '2px solid white' : 'none',}}
+                sx={{ 
+                  my: 2, 
+                  color: 'white', 
+                  display: 'block', 
+                  borderBottom: location.pathname === item.path ? '2px solid white' : 'none',
+                }}
               >
                 {item.label}
               </Button>
             ))}
           </Box>
-          <Stack direction={"row"} sx={{ flexGrow: 0 }}>
+
+          {/* Desktop User Menu */}
+          <Stack 
+            direction="row" 
+            sx={{ 
+              flexGrow: 0,
+              display: { xs: 'none', md: 'flex' }
+            }}
+          >
             <ThemeModeButton/>
             <Avatar alt="Brady Spears" src={profilePic} />
           </Stack>
@@ -147,4 +206,5 @@ function ResponsiveAppBar() {
     </AppBar>
   );
 }
+
 export default ResponsiveAppBar;

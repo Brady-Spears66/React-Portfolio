@@ -1,7 +1,7 @@
 {
   "hosting": {
     "site": "bradyspearsportfolio",
-    "public": "public",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",
