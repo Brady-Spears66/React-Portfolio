@@ -1,163 +1,177 @@
-import GitHubIcon from '@mui/icons-material/GitHub';
 import { Box, Container, IconButton, Stack, TextField, Typography, Divider, Paper, Button } from '@mui/material';
-import Grid from '@mui/material/Grid';
-import EmailIcon from '@mui/icons-material/Email';
-import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import PersonIcon from '@mui/icons-material/Person';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import Grid from '@mui/material/Grid2';
+import React, { useState } from 'react';
+import emailjs from 'emailjs-com'
+import {v4 as uuidv4 } from 'uuid'
 
 function Contact() {
+    const [formData, setFormData] = useState({
+        user_name: '',
+        user_email: '',
+        message: '',
+    })
+
+    const content = "NewLine";
+    const filePath = "../general/MessageCount.txt"
+
+
+
+    const [successMessage, setSuccessMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+
+    const serviceId = 'service_ilu6ras'
+    const templateId = 'contact_form'
+    const publicKey = 'n-yr5L24zucQzOM5-'
+
+    // @ts-ignore
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value
+        }));
+    }
+
+    // @ts-ignore
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const uniqueMessageId = uuidv4();
+
+        const templateParams = {
+            user_name: formData.user_name,
+            user_email: formData.user_email,
+            message: formData.message,
+            message_id: uniqueMessageId,
+        }
+
+        emailjs.send(serviceId, templateId, templateParams, publicKey)
+        .then((response) => {
+            setSuccessMessage("Your message has been sent successfully");
+            setErrorMessage('');
+            setFormData({user_name: '', user_email: '', message: ''});
+        })
+        .catch((error) => {
+            setErrorMessage('There was an issue sending your message. Please try again.');
+            setSuccessMessage('');
+            console.error('EmailJS Error: ', error)
+        })
+    }
+
     return (
         <Box sx={{ 
             width: '100%',
-            overflow: 'hidden',
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center' // Center everything horizontally
+            position: 'relative' // Added position relative
         }}>
             <Container 
                 maxWidth="md" 
                 sx={{ 
-                    mb: 10,
                     display: 'flex',
                     flexDirection: 'column',
-                    alignItems: 'center', // Center container content
-                    px: { xs: 2, sm: 3 }
+                    alignItems: 'center',
+                    px: { xs: 2, sm: 3 },
+                    pt: 4,
+                    height: '100%', // Take up full height
                 }}
             >
-                <Grid
-                    container
-                    spacing={2}
-                    sx={{
-                        width: '100%',
-                        margin: 0,
-                        // Remove any default padding
-                        '& .MuiGrid-item': {
-                            px: 0, // Remove default padding from Grid items
-                        }
-                    }}
-                >
-                    <Grid item xs={12}>
-                        <Typography 
-                            sx={{
-                                fontSize: { xs: '2rem', sm: '3rem' },
-                                textAlign: "center",
-                                mb: 4,
-                                width: '100%' // Ensure full width
-                            }}
-                        >
-                            Contact Me
-                        </Typography>
-                    </Grid>
-                    
-                    <Grid item xs={12} sm={6}>
-                        <TextField
-                            label="Name"
-                            name='name'
-                            required
-                            fullWidth
-                            size="medium"
-                        />
-                    </Grid>
-                    
-                    <Grid item xs={12} sm={6}>
-                        <TextField
-                            label="Email"
-                            name='email'
-                            required
-                            fullWidth
-                            size="medium"
-                        />
-                    </Grid>
-                    
-                    <Grid item xs={12}>
-                        <TextField
-                            label="Write a message"
-                            name='message'
-                            required
-                            fullWidth
-                            multiline
-                            rows={4}
-                        />
-                    </Grid>
-
-                    <Grid item xs={12}>
-                        <Button 
-                            variant='contained'
-                            fullWidth
-                            sx={{
-                                backgroundColor: "#3f51b5",
-                                color: "white"
-                            }}
-                        >
-                            Submit
-                        </Button>
-                    </Grid>
-                </Grid>
-            </Container>
-
-            <Container 
-                maxWidth="md"
-                sx={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    px: { xs: 2, sm: 3 }
-                }}
-            >
-                <Stack 
-                    spacing={1} 
-                    alignItems="center"
-                    sx={{ 
-                        width: '100%',
-                        maxWidth: 'md' 
-                    }}
-                >
-                    <Typography variant="body1">
-                        Brady Spears
-                    </Typography>
-                    <Typography variant="body1">
-                        South Charleston, Ohio
-                    </Typography>
-                    <Typography variant="body1">
-                        spearsb2@miamioh.edu
-                    </Typography>
-                    <Typography variant="body1">
-                        (937) 371-2938
-                    </Typography>
-                    
-                    <Stack 
-                        direction="row" 
-                        spacing={2} 
-                        justifyContent="center"
-                        sx={{ 
+                <form onSubmit={handleSubmit} style={{ width: '100%'}}>
+                    <Grid
+                        container
+                        spacing={2}
+                        sx={{
                             width: '100%',
-                            flexWrap: 'wrap' 
+                            margin: 0,
+                            '& .MuiGrid-item': {
+                                px: 0,
+                            }
                         }}
                     >
-                        {[
-                            { icon: <GitHubIcon />, href: 'https://github.com/Brady-Spears66', label: 'github' },
-                            { icon: <LinkedInIcon />, href: 'https://www.linkedin.com/in/brady-spears-2b5192229/', label: 'linkedin' },
-                            { icon: <LocalPhoneIcon />, href: 'tel:937-371-2938', label: 'phone' },
-                            { icon: <EmailIcon />, href: 'mailto:spearsb2@miamioh.edu', label: 'email' }
-                        ].map((item) => (
-                            <IconButton 
-                                key={item.label}
-                                size='large'
-                                aria-label={item.label}
-                                href={item.href}
-                                target='_blank'
+                        <Grid size={{xs: 12}}>
+                            <Typography 
                                 sx={{
-                                    '& svg': {
-                                        fontSize: '2.5rem'
-                                    }
+                                    fontSize: { xs: '2rem', sm: '3rem' },
+                                    textAlign: "center",
+                                    mb: 4,
+                                    width: '100%'
                                 }}
                             >
-                                {item.icon}
-                            </IconButton>
-                        ))}
-                    </Stack>
-                </Stack>
+                                Contact Me
+                            </Typography>
+                        </Grid>
+                        
+                        <Grid size={{xs: 12, sm: 6}}>
+                            <TextField
+                                label="Name"
+                                name='user_name'
+                                value={formData.user_name}
+                                onChange={handleChange}
+                                required
+                                fullWidth
+                                size="medium"
+                            />
+                        </Grid>
+                        
+                        <Grid size={{xs: 12, sm: 6}}>
+                            <TextField
+                                label="Email"
+                                name='user_email'
+                                value={formData.user_email}
+                                onChange={handleChange}
+                                required
+                                fullWidth
+                                size="medium"
+                            />
+                        </Grid>
+                        
+                        <Grid size={{xs: 12}}>
+                            <TextField
+                                label="Write a message"
+                                name='message'
+                                value={formData.message}
+                                onChange={handleChange}
+                                required
+                                fullWidth
+                                multiline
+                                rows={4}
+                            />
+                        </Grid>
+
+                        <Grid size={{xs: 12}}>
+                            <Button
+                                type='submit'
+                                variant='contained'
+                                fullWidth
+                                sx={{
+                                    backgroundColor: "#3f51b5",
+                                    color: "white"
+                                }}
+                            >
+                                Submit
+                            </Button>
+                        </Grid>
+                        {successMessage && (
+                            <Grid size={{xs: 12}}>
+                                <Typography 
+                                    sx={{ color: 'green', mt: 2, textAlign: 'center' }}
+                                >
+                                    {successMessage}
+                                </Typography>
+                            </Grid>
+                        )}
+
+                        {errorMessage && (
+                            <Grid size={{xs: 12}}>
+                                <Typography 
+                                    sx={{ color: 'red', mt: 2, textAlign: 'center' }}
+                                >
+                                    {errorMessage}
+                                </Typography>
+                            </Grid>
+                        )}
+                    </Grid>
+                </form>
             </Container>
         </Box>
     );

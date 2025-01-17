@@ -8,6 +8,7 @@ import Contact from './pages/Contact';
 import { useAppSelector } from './state/Hooks';
 import { Education } from './pages/Education';
 import { Skills } from './pages/Skills';
+import Footer from './components/Footer';
 
 
 const theme = createTheme({});
@@ -24,9 +25,9 @@ const DarkTheme: ThemeOptions = createTheme({
     },
     components: {
       MuiCssBaseline: {
-        styleOverrides: (themeParam) => ({
-          body: themeParam.palette.mode === 'dark' ? darkScrollbar() : null,
-        }),
+        styleOverrides: {
+          body: darkScrollbar(),
+        },
       },
     },
 });
@@ -47,21 +48,25 @@ const LightTheme: ThemeOptions = createTheme({
 function App() {
   const mode = useAppSelector(state => state.theme.mode);
   const theme = mode === "light" ? LightTheme : DarkTheme;
-  
-  document.getElementById('root')
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline enableColorScheme/>
-      <Box sx={{ // Use Box instead of Container for the root element
+      <Box sx={{
         display: 'flex',
         flexDirection: 'column',
         minHeight: '100vh',
-        minWidth: '100%',
+        width: '100%',
         overflow: 'hidden',
       }}>
         <Navbar />
-        <Container sx={{ mt: 10}}>
+        <Container 
+          sx={{ 
+            mt: 10,
+            flex: '1 0 auto', // This makes the container take up available space
+            mb: 4, // Add some margin before the footer
+          }}
+        >
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/experience" element={<Experience />} />
@@ -71,6 +76,7 @@ function App() {
             <Route path="/education" element={<Education/>} />
           </Routes>
         </Container>
+        <Footer />
       </Box>
     </ThemeProvider>
   );
