@@ -46,7 +46,7 @@ function Contact() {
         }
 
         emailjs.send(serviceId, templateId, templateParams, publicKey)
-        .then((response) => {
+        .then(() => {
             setSuccessMessage("Your message has been sent successfully");
             setErrorMessage('');
             setFormData({user_name: '', user_email: '', message: ''});
