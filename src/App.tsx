@@ -1,5 +1,5 @@
 import { Box, Container, createTheme, CssBaseline, darkScrollbar, ThemeOptions, ThemeProvider } from '@mui/material';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar'
 import Home from './pages/Home';
 import Experience from './pages/Experience';
@@ -10,6 +10,7 @@ import { Education } from './pages/Education';
 import { Skills } from './pages/Skills';
 import Footer from './components/Footer';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import logo from './images/mobile-logo.png'
 
 
 const theme = createTheme({});
@@ -23,13 +24,6 @@ const DarkTheme: ThemeOptions = createTheme({
         secondary: {
             main: "#f50057"
         }
-    },
-    components: {
-      MuiCssBaseline: {
-        styleOverrides: {
-          body: darkScrollbar(),
-        },
-      },
     },
 });
 console.log(DarkTheme.components?.MuiCssBaseline?.styleOverrides)
@@ -49,11 +43,19 @@ const LightTheme: ThemeOptions = createTheme({
 function App() {
   const mode = useAppSelector(state => state.theme.mode);
   const theme = mode === "light" ? LightTheme : DarkTheme;
+  const loc = useLocation().pathname.replace(/^\/+/, '') || "Home";
+  const titleString = loc.charAt(0).toUpperCase() + loc.slice(1) + " Page";
+
+
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline enableColorScheme/>
       <HelmetProvider>
+      <Helmet>
+                <title>{titleString}</title>
+                <link rel="icon" href={logo}/>
+      </Helmet>
       <Box sx={{
         display: 'flex',
         flexDirection: 'column',
@@ -64,7 +66,7 @@ function App() {
         <Navbar />
         <Container 
           sx={{ 
-            mt: 10,
+            mt: 5,
             flex: '1 0 auto', // This makes the container take up available space
             mb: 4, // Add some margin before the footer
           }}

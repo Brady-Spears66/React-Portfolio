@@ -62,9 +62,6 @@ function Contact() {
 
     return (
         <>
-            <Helmet>
-                <title>Contact Page - Brady Spears</title>
-            </Helmet>
             <Box sx={{ 
                 width: '100%',
                 display: 'flex',
@@ -78,7 +75,7 @@ function Contact() {
                         flexDirection: 'column',
                         alignItems: 'center',
                         px: { xs: 2, sm: 3 },
-                        pt: 4,
+                        py: 0,
                         height: '100%', // Take up full height
                     }}
                 >
@@ -150,8 +147,8 @@ function Contact() {
                                     variant='contained'
                                     fullWidth
                                     sx={{
-                                        backgroundColor: "#3f51b5",
-                                        color: "white"
+                                        backgroundColor: "rgb(25, 190, 207)",
+                                        color: "black"
                                     }}
                                 >
                                     Submit

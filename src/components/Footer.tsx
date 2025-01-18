@@ -8,7 +8,8 @@ export default function Footer() {
     const theme = useTheme();
 
     const backgroundColor = theme.palette.mode === 'dark'
-        ? 'rgba(255, 255, 255, 0.06)' : '#4f51b5';
+        ? 'rgba(255, 255, 255, 0.06)' : 'grey';
+    // Old Background Color: #4f51b5
 
     return (
         <Box 
@@ -77,7 +78,12 @@ export default function Footer() {
                                 target='_blank'
                                 sx={{
                                     '& svg': {
-                                        fontSize: '2.5rem'
+                                        fontSize: '2.5rem',
+                                        
+                                    },
+                                    '&:hover': {
+                                        color: "rgb(25, 190, 207)",
+                                        backgroundColor: "transparent"
                                     }
                                 }}
                             >

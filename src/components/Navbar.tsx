@@ -12,7 +12,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { useLocation, useNavigate } from 'react-router-dom';
 import ThemeModeButton from './ThemeModeButton';
-import { Stack } from '@mui/material';
+import { Stack, useTheme } from '@mui/material';
 import profilePic from '../images/headshot.jpeg'
 import horizontalLogo from '../images/horizontal-logo.png'
 import mobileLogo from '../images/mobile-logo.png'
@@ -20,8 +20,12 @@ import mobileLogo from '../images/mobile-logo.png'
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
+  const theme = useTheme();
   const navigate = useNavigate();
   const location = useLocation();
+
+  const backgroundColor = theme.palette.mode === 'dark'
+        ? 'rgba(255, 255, 255, 0.06)' : 'grey';
 
   type navItem = {
     label: string;
@@ -63,7 +67,8 @@ function ResponsiveAppBar() {
   return (
     <AppBar 
       position="static" 
-      sx={{ 
+      sx={{
+        backgroundColor,
         width: "100vw", // Use viewport width
         overflow: "hidden",
         height: { lg: '120px' },
@@ -208,6 +213,7 @@ function ResponsiveAppBar() {
                   borderBottom: location.pathname === item.path ? '2px solid white' : '2px solid transparent',
                   '&:hover': {
                     backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                    borderBottomColor: 'rgb(25, 190, 207)'
                   },
                 }}
               >
