@@ -22,7 +22,7 @@ function Contact() {
 
     const serviceId = 'service_ilu6ras'
     const templateId = 'contact_form'
-    const publicKey = 'n-yr5L24zucQzOM5-'
+    const publicKey = import.meta.env.VITE_REACT_APP_EMAILJS_API_KEY;
 
     // @ts-ignore
     const handleChange = React.useCallback((e) => {
