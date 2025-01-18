@@ -9,6 +9,7 @@ import { useAppSelector } from './state/Hooks';
 import { Education } from './pages/Education';
 import { Skills } from './pages/Skills';
 import Footer from './components/Footer';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 
 const theme = createTheme({});
@@ -52,6 +53,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline enableColorScheme/>
+      <HelmetProvider>
       <Box sx={{
         display: 'flex',
         flexDirection: 'column',
@@ -78,6 +80,7 @@ function App() {
         </Container>
         <Footer />
       </Box>
+      </HelmetProvider>
     </ThemeProvider>
   );
 }

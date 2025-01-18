@@ -1,11 +1,12 @@
 import { Typography } from "@mui/material";
+import { Helmet } from "react-helmet-async";
 
 export function Skills() {
     return (
     <>
-    <Typography variant="h1">
-        This is the skills page
-    </Typography>
+        <Helmet>
+            <title>Skills Page - Brady Spears</title>
+        </Helmet>
     </>
     );
 }

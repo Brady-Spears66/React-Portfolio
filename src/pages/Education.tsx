@@ -1,4 +1,11 @@
+import { Helmet } from "react-helmet-async";
+
 export function Education() {
-    return <>
-    </>
+    return (
+        <>
+            <Helmet>
+                <title>Education Page - Brady Spears</title>
+            </Helmet>
+        </>
+    )
 }

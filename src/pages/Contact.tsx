@@ -3,6 +3,7 @@ import Grid from '@mui/material/Grid2';
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com'
 import {v4 as uuidv4 } from 'uuid'
+import { Helmet } from 'react-helmet-async';
 
 function Contact() {
     const [formData, setFormData] = useState({
@@ -24,13 +25,14 @@ function Contact() {
     const publicKey = 'n-yr5L24zucQzOM5-'
 
     // @ts-ignore
-    const handleChange = (e) => {
+    const handleChange = React.useCallback((e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({
-            ...prevData,
-            [name]: value
+          ...prevData,
+          [name]: value
         }));
-    }
+      }, []);
+      
 
     // @ts-ignore
     const handleSubmit = (e) => {
@@ -59,121 +61,126 @@ function Contact() {
     }
 
     return (
-        <Box sx={{ 
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            position: 'relative' // Added position relative
-        }}>
-            <Container 
-                maxWidth="md" 
-                sx={{ 
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    px: { xs: 2, sm: 3 },
-                    pt: 4,
-                    height: '100%', // Take up full height
-                }}
-            >
-                <form onSubmit={handleSubmit} style={{ width: '100%'}}>
-                    <Grid
-                        container
-                        spacing={2}
-                        sx={{
-                            width: '100%',
-                            margin: 0,
-                            '& .MuiGrid-item': {
-                                px: 0,
-                            }
-                        }}
-                    >
-                        <Grid size={{xs: 12}}>
-                            <Typography 
-                                sx={{
-                                    fontSize: { xs: '2rem', sm: '3rem' },
-                                    textAlign: "center",
-                                    mb: 4,
-                                    width: '100%'
-                                }}
-                            >
-                                Contact Me
-                            </Typography>
-                        </Grid>
-                        
-                        <Grid size={{xs: 12, sm: 6}}>
-                            <TextField
-                                label="Name"
-                                name='user_name'
-                                value={formData.user_name}
-                                onChange={handleChange}
-                                required
-                                fullWidth
-                                size="medium"
-                            />
-                        </Grid>
-                        
-                        <Grid size={{xs: 12, sm: 6}}>
-                            <TextField
-                                label="Email"
-                                name='user_email'
-                                value={formData.user_email}
-                                onChange={handleChange}
-                                required
-                                fullWidth
-                                size="medium"
-                            />
-                        </Grid>
-                        
-                        <Grid size={{xs: 12}}>
-                            <TextField
-                                label="Write a message"
-                                name='message'
-                                value={formData.message}
-                                onChange={handleChange}
-                                required
-                                fullWidth
-                                multiline
-                                rows={4}
-                            />
-                        </Grid>
-
-                        <Grid size={{xs: 12}}>
-                            <Button
-                                type='submit'
-                                variant='contained'
-                                fullWidth
-                                sx={{
-                                    backgroundColor: "#3f51b5",
-                                    color: "white"
-                                }}
-                            >
-                                Submit
-                            </Button>
-                        </Grid>
-                        {successMessage && (
+        <>
+            <Helmet>
+                <title>Contact Page - Brady Spears</title>
+            </Helmet>
+            <Box sx={{ 
+                width: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'relative' // Added position relative
+            }}>
+                <Container 
+                    maxWidth="md" 
+                    sx={{ 
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        px: { xs: 2, sm: 3 },
+                        pt: 4,
+                        height: '100%', // Take up full height
+                    }}
+                >
+                    <form onSubmit={handleSubmit} style={{ width: '100%'}}>
+                        <Grid
+                            container
+                            spacing={2}
+                            sx={{
+                                width: '100%',
+                                margin: 0,
+                                '& .MuiGrid-item': {
+                                    px: 0,
+                                }
+                            }}
+                        >
                             <Grid size={{xs: 12}}>
                                 <Typography 
-                                    sx={{ color: 'green', mt: 2, textAlign: 'center' }}
+                                    sx={{
+                                        fontSize: { xs: '2rem', sm: '3rem' },
+                                        textAlign: "center",
+                                        mb: 4,
+                                        width: '100%'
+                                    }}
                                 >
-                                    {successMessage}
+                                    Contact Me
                                 </Typography>
                             </Grid>
-                        )}
-
-                        {errorMessage && (
+                            
+                            <Grid size={{xs: 12, sm: 6}}>
+                                <TextField
+                                    label="Name"
+                                    name='user_name'
+                                    value={formData.user_name}
+                                    onChange={handleChange}
+                                    required
+                                    fullWidth
+                                    size="medium"
+                                />
+                            </Grid>
+                            
+                            <Grid size={{xs: 12, sm: 6}}>
+                                <TextField
+                                    label="Email"
+                                    name='user_email'
+                                    value={formData.user_email}
+                                    onChange={handleChange}
+                                    required
+                                    fullWidth
+                                    size="medium"
+                                />
+                            </Grid>
+                            
                             <Grid size={{xs: 12}}>
-                                <Typography 
-                                    sx={{ color: 'red', mt: 2, textAlign: 'center' }}
-                                >
-                                    {errorMessage}
-                                </Typography>
+                                <TextField
+                                    label="Write a message"
+                                    name='message'
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    required
+                                    fullWidth
+                                    multiline
+                                    rows={4}
+                                />
                             </Grid>
-                        )}
-                    </Grid>
-                </form>
-            </Container>
-        </Box>
+
+                            <Grid size={{xs: 12}}>
+                                <Button
+                                    type='submit'
+                                    variant='contained'
+                                    fullWidth
+                                    sx={{
+                                        backgroundColor: "#3f51b5",
+                                        color: "white"
+                                    }}
+                                >
+                                    Submit
+                                </Button>
+                            </Grid>
+                            {successMessage && (
+                                <Grid size={{xs: 12}}>
+                                    <Typography 
+                                        sx={{ color: 'green', mt: 2, textAlign: 'center' }}
+                                    >
+                                        {successMessage}
+                                    </Typography>
+                                </Grid>
+                            )}
+
+                            {errorMessage && (
+                                <Grid size={{xs: 12}}>
+                                    <Typography 
+                                        sx={{ color: 'red', mt: 2, textAlign: 'center' }}
+                                    >
+                                        {errorMessage}
+                                    </Typography>
+                                </Grid>
+                            )}
+                        </Grid>
+                    </form>
+                </Container>
+            </Box>
+        </>
     );
 }
 

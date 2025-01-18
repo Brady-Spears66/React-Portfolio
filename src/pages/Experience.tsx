@@ -1,11 +1,12 @@
 import { Typography } from "@mui/material";
+import { Helmet } from "react-helmet-async";
 
 function Experience() {
     return(
         <>
-            <Typography variant="h1" align="center">
-                Hello! This is the experience page.
-            </Typography>
+            <Helmet>
+                <title>Experience Page - Brady Spears</title>
+            </Helmet>
         </>
     )
 }

@@ -9,12 +9,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { useLocation, useNavigate } from 'react-router-dom';
 import ThemeModeButton from './ThemeModeButton';
 import { Stack } from '@mui/material';
 import profilePic from '../images/headshot.jpeg'
+import horizontalLogo from '../images/horizontal-logo.png'
+import mobileLogo from '../images/mobile-logo.png'
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -54,56 +55,73 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
-  // @ts-expec-error: no explicit typing
   const menuItemClicked = (item: navItem) => {
     navigate(item.path);
     handleCloseNavMenu();
-    console.log("menu item clicked")
   }
 
   return (
-    <AppBar position="static" sx={{width: "100%", overflow: "hidden", px: 2}}>
-      <Container
+    <AppBar 
+      position="static" 
+      sx={{ 
+        width: "100vw", // Use viewport width
+        overflow: "hidden",
+        height: { lg: '120px' },
+        left: 0,
+        right: 0,
+        maxWidth: '100%',
+      }}
+    >
+      <Box // Replaced Container with Box
         sx={{
-          
-          width: '100%', // Ensure it doesn't exceed the viewport width
-          maxWidth: '100%', // Prevent overflow
-          margin: '0 auto', // Center the container
+          width: '100%',
+          height: '100%',
+          margin: 0,
+          padding: 0,
         }}
-        disableGutters
       >
         <Toolbar 
           disableGutters 
           sx={{ 
-            marginRight: "0px", 
-            marginLeft: "0px",
+            px: { xs: 2, md: 4 }, // Padding only for content spacing
             display: 'flex',
-            justifyContent: 'space-between'
+            justifyContent: 'space-between',
+            height: '100%',
+            maxWidth: '100%',
+            margin: 0,
           }}
         >
           {/* Desktop Logo */}
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
+          <Box
             sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              color: 'inherit',
-              textDecoration: 'none',
+              display: { xs: 'none', md: 'none', lg: 'flex' },
+              height: '75%',
+              width: 'auto',
+              alignItems: 'center',
+              mr: 4,
             }}
           >
-            Brady Spears
-          </Typography>
+            <Box
+              component="img"
+              src={horizontalLogo}
+              alt="Logo"
+              sx={{
+                height: '90%',
+                width: 'auto',
+                cursor: 'pointer',
+                objectFit: 'contain',
+              }}
+              onClick={() => navigate('/')}
+            />
+          </Box>
 
           {/* Mobile Layout - Three equal sections */}
           {/* Left Section - Menu Button */}
           <Box sx={{ 
-            display: { xs: 'flex', md: 'none' },
+            display: { xs: 'flex', md: 'flex', lg: 'none' },
             flex: '1 1 0',
-            justifyContent: 'flex-start'
+            justifyContent: 'flex-start',
+            alignItems: 'center',
           }}>
             <IconButton
               size="large"
@@ -129,7 +147,7 @@ function ResponsiveAppBar() {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{ display: { xs: 'block', md: 'none' } }}
+              sx={{ display: { xs: 'block', lg: 'none' } }}
             >
               {navItems.map((item) => (
                 <MenuItem key={item.label} onClick={() => menuItemClicked(item)}>
@@ -139,32 +157,32 @@ function ResponsiveAppBar() {
             </Menu>
           </Box>
 
-          {/* Center Section - Typography */}
+          {/* Center Section - Mobile Logo */}
           <Box sx={{ 
-            display: { xs: 'flex', md: 'none' },
+            display: { xs: 'flex', md: 'flex', lg: 'none' },
             flex: '1 1 0',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            alignItems: 'center',
           }}>
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
+            <Box
+              component="img"
+              src={mobileLogo}
+              alt="Mobile Logo"
               sx={{
-                fontFamily: 'monospace',
-                fontWeight: 700,
-                color: 'inherit',
-                textDecoration: 'none',
+                height: '50px',
+                width: 'auto',
+                cursor: 'pointer',
               }}
-            >
-              Brady Spears
-            </Typography>
+              onClick={() => navigate('/')}
+            />
           </Box>
 
           {/* Right Section - Theme Button and Avatar */}
           <Box sx={{ 
-            display: { xs: 'flex', md: 'none' },
+            display: { xs: 'flex', md: 'flex', lg: 'none' },
             flex: '1 1 0',
-            justifyContent: 'flex-end'
+            justifyContent: 'flex-end',
+            alignItems: 'center',
           }}>
             <Stack direction="row" spacing={1}>
               <ThemeModeButton/>
@@ -173,16 +191,24 @@ function ResponsiveAppBar() {
           </Box>
 
           {/* Desktop Navigation */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', lg: 'flex' } }}>
+          <Box sx={{ 
+            display: { xs: 'none', md: 'none', lg: 'flex' },
+            alignItems: 'center',
+            flex: 1,
+          }}>
             {navItems.map((item) => (
               <Button
                 key={item.label}
                 onClick={() => navigate(item.path)}
                 sx={{ 
-                  my: 2, 
-                  color: 'white', 
-                  display: 'block', 
-                  borderBottom: location.pathname === item.path ? '2px solid white' : 'none',
+                  px: 2,
+                  py: 1,
+                  color: 'white',
+                  fontSize: { md: '0.7rem', lg: '1.2rem' },
+                  borderBottom: location.pathname === item.path ? '2px solid white' : '2px solid transparent',
+                  '&:hover': {
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                  },
                 }}
               >
                 {item.label}
@@ -193,16 +219,21 @@ function ResponsiveAppBar() {
           {/* Desktop User Menu */}
           <Stack 
             direction="row" 
+            spacing={2}
             sx={{ 
-              flexGrow: 0,
-              display: { xs: 'none', md: 'flex' }
+              display: { xs: 'none', md: 'none', lg: 'flex' },
+              alignItems: 'center',
             }}
           >
             <ThemeModeButton/>
-            <Avatar alt="Brady Spears" src={profilePic} />
+            <Avatar 
+              alt="Brady Spears" 
+              src={profilePic} 
+              sx={{ width: 40, height: 40 }}
+            />
           </Stack>
         </Toolbar>
-      </Container>
+      </Box>
     </AppBar>
   );
 }
