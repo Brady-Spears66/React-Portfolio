@@ -70,6 +70,7 @@ const ComputersCanvas = () => {
           enableZoom={false}
           enablePan={false}
           enableDamping={false}
+          enableRotate={false}
           autoRotate={true}
           autoRotateSpeed={3}
           maxPolarAngle={Math.PI / 2}
