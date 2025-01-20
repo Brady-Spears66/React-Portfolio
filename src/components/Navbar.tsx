@@ -24,8 +24,11 @@ function ResponsiveAppBar() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // const backgroundColor = theme.palette.mode === 'dark'
+  //       ? 'rgba(255, 255, 255, 0.06)' : 'grey';
   const backgroundColor = theme.palette.mode === 'dark'
         ? 'rgba(255, 255, 255, 0.06)' : 'grey';
+
 
   type navItem = {
     label: string;

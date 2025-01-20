@@ -1,4 +1,4 @@
-import { Box, Container, Typography, useTheme } from '@mui/material';
+import { Box, Container, Paper, Typography, useTheme } from '@mui/material';
 import { ComputersCanvas } from '../components/canvas';
 
 function Home() {
@@ -14,7 +14,7 @@ function Home() {
         }}>
             <Container sx={{ textAlign: 'center', mt: 2}}>
                 <Typography variant="h2" component="h1" gutterBottom>
-                    Welcome to my portfolio.
+                    Welcome to my portfolio
                 </Typography>
                 <Typography variant="h4" component="h2" gutterBottom>
                     My name is Brady Spears

@@ -58,7 +58,7 @@ const ComputersCanvas = () => {
 
   return (
     <Canvas
-      style={{ height: '100vh', width: '100%' }}
+      style={{ height: '100%', width: 'auto' }}
       frameloop='demand'
       shadows
       dpr={[1, 2]}
@@ -69,6 +69,9 @@ const ComputersCanvas = () => {
         <OrbitControls
           enableZoom={false}
           enablePan={false}
+          enableDamping={false}
+          autoRotate={true}
+          autoRotateSpeed={3}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />

@@ -26,16 +26,16 @@ const DarkTheme: ThemeOptions = createTheme({
         }
     },
 });
-console.log(DarkTheme.components?.MuiCssBaseline?.styleOverrides)
 
 const LightTheme: ThemeOptions = createTheme({
     palette: {
         mode: "light",
         primary: {
-            main: "#4f51b5"
+            main: '#808080',
+            contrastText: "#4fb25"
         },
         secondary: {
-            main: "#f50057"
+            main: 'rgb(25, 190, 207)'
         }
     }
 });
