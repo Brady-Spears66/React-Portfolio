@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import logo from './images/mobile-logo.png'
 
-
+// Test comment
 const theme = createTheme({});
 
 const DarkTheme: ThemeOptions = createTheme({
