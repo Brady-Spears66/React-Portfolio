@@ -1,124 +1,139 @@
 import * as React from 'react';
-import Timeline from '@mui/lab/Timeline';
-import TimelineItem from '@mui/lab/TimelineItem';
-import TimelineSeparator from '@mui/lab/TimelineSeparator';
-import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineContent from '@mui/lab/TimelineContent';
-import TimelineDot from '@mui/lab/TimelineDot';
-import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-
+import { experiences } from '../types';
+import { useTheme } from '@mui/material';
 
 export default function AlternateTimeline() {
+  const theme = useTheme();
+  
+  const backgroundColor = theme.palette.mode === 'dark'
+    ? 'rgba(255, 255, 255, 0.06)' 
+    : 'grey';
+    
+  const textColor = 'white';
+
+  const timelineClassName = theme.palette.mode === 'dark' ? 'dark-timeline' : 'light-timeline';
+
   return (
+    <>
+      <style>
+        {`
+          .dark-timeline .vertical-timeline::before {
+            background: white;
+          }
+          
+          .light-timeline .vertical-timeline::before {
+            background: black;
+          }
 
-    // <Timeline position="alternate-reverse">
-    //   <TimelineItem>
-    //     <TimelineSeparator>
-    //       <TimelineDot sx={{width: '2vw', height: '2vw'}}/>
-    //       <TimelineConnector sx={{height: '20vw'}} />
-    //     </TimelineSeparator>
-    //     <TimelineContent>Eat</TimelineContent>
-    //   </TimelineItem>
-    //   <TimelineItem>
-    //     <TimelineSeparator>
-    //         <TimelineDot sx={{width: '2vw', height: '2vw'}}/>
-    //         <TimelineConnector sx={{height: '20vw'}} />
-    //     </TimelineSeparator>
-    //     <TimelineContent>Code</TimelineContent>
-    //   </TimelineItem>
-    //   <TimelineItem>
-    //     <TimelineSeparator>
-    //       <TimelineDot sx={{width: '2vw', height: '2vw'}} />
-    //     </TimelineSeparator>
-    //     <TimelineContent>Sleep</TimelineContent>
-    //   </TimelineItem>
-    // </Timeline>
+          .dark-timeline .vertical-timeline-element-date {
+            color: white !important;
+          }
+          
+          .light-timeline .vertical-timeline-element-date {
+            color: black !important;
+          }
 
-    <VerticalTimeline>
-  <VerticalTimelineElement
-    className="vertical-timeline-element--work"
-    contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-    date="2011 - present"
-    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-  >
-    <h3 className="vertical-timeline-element-title">Creative Director</h3>
-    <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-    <p>
-      Creative Direction, User Experience, Visual Design, Project Management, Team Leading
-    </p>
-  </VerticalTimelineElement>
-  <VerticalTimelineElement
-    className="vertical-timeline-element--work"
-    date="2010 - 2011"
-    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-  >
-    <h3 className="vertical-timeline-element-title">Art Director</h3>
-    <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
-    <p>
-      Creative Direction, User Experience, Visual Design, SEO, Online Marketing
-    </p>
-  </VerticalTimelineElement>
-  <VerticalTimelineElement
-    className="vertical-timeline-element--work"
-    date="2008 - 2010"
-    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-  >
-    <h3 className="vertical-timeline-element-title">Web Designer</h3>
-    <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
-    <p>
-      User Experience, Visual Design
-    </p>
-  </VerticalTimelineElement>
-  <VerticalTimelineElement
-    className="vertical-timeline-element--work"
-    date="2006 - 2008"
-    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-  >
-    <h3 className="vertical-timeline-element-title">Web Designer</h3>
-    <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
-    <p>
-      User Experience, Visual Design
-    </p>
-  </VerticalTimelineElement>
-  <VerticalTimelineElement
-    className="vertical-timeline-element--education"
-    date="April 2013"
-    iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-  >
-    <h3 className="vertical-timeline-element-title">Content Marketing for Web, Mobile and Social Media</h3>
-    <h4 className="vertical-timeline-element-subtitle">Online Course</h4>
-    <p>
-      Strategy, Social Media
-    </p>
-  </VerticalTimelineElement>
-  <VerticalTimelineElement
-    className="vertical-timeline-element--education"
-    date="November 2012"
-    iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-  >
-    <h3 className="vertical-timeline-element-title">Agile Development Scrum Master</h3>
-    <h4 className="vertical-timeline-element-subtitle">Certification</h4>
-    <p>
-      Creative Direction, User Experience, Visual Design
-    </p>
-  </VerticalTimelineElement>
-  <VerticalTimelineElement
-    className="vertical-timeline-element--education"
-    date="2002 - 2006"
-    iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-  >
-    <h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-    <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
-    <p>
-      Creative Direction, Visual Design
-    </p>
-  </VerticalTimelineElement>
-  <VerticalTimelineElement
-    iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
-  />
-</VerticalTimeline>
+          .vertical-timeline-element-icon {
+            width: 5rem !important;
+            height: 5rem !important;
+            margin-left: -2.5rem !important;
+            overflow: hidden !important;
+          }
 
+          .vertical-timeline-element-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            padding: 0;
+            background: white;
+          }
+
+          /* Adjust size for different screen sizes */
+          @media only screen and (min-width: 1170px) {
+            .vertical-timeline-element-date {
+              margin-right: 2rem !important;
+              margin-left: 2rem !important;
+              /* Space between date and content */
+            }
+
+            .vertical-timeline-element-content {
+            
+               /* Space between content and icon */
+            }
+
+          }
+
+          @media only screen and (max-width: 1169px) {
+            .vertical-timeline-element-icon {
+              width: 3.5rem !important;
+              height: 3.5rem !important;
+              margin-left: -.5rem !important;
+            }  
+          }
+
+          @media only screen and (max-width: 768px) {
+            .vertical-timeline-element-title {
+              font-size: 1.2rem; /* Adjust for smaller screens */
+            }
+
+            .vertical-timeline-element-subtitle {
+              font-size: 1rem; /* Adjust for smaller screens */
+            }
+
+            .vertical-timeline-element-content ul {
+              font-size: 0.7rem; /* Adjust for smaller screens */
+            }
+          }
+
+          @media only screen and (max-width: 480px) {
+            .vertical-timeline-element-title {
+              font-size: 1rem; /* Adjust for very small screens */
+            }
+
+            .vertical-timeline-element-subtitle {
+              font-size: 0.8rem; /* Adjust for very small screens */
+            }
+
+            .vertical-timeline-element-content ul {
+              font-size: 0.6rem; /* Adjust for very small screens */
+            }
+          }
+        `}
+      </style>
+      <div className={timelineClassName}>
+        <VerticalTimeline>
+          {experiences.map((exp, index) => (
+            <VerticalTimelineElement
+              key={index}
+              date={exp.date}
+              icon={<img src={exp.logo} alt={exp.company} />}
+              iconStyle={{
+                background: 'white',
+                overflow: 'hidden'
+              }}
+              contentStyle={{ 
+                color: textColor,
+                background: backgroundColor
+              }}
+              contentArrowStyle={{
+                borderRight: `7px solid ${backgroundColor}`
+              }}
+              dateClassName="vertical-timeline-element-date"
+            >
+              <h3 className="vertical-timeline-element-title">{exp.title}</h3>
+              <h4 className="vertical-timeline-element-subtitle">{exp.company}</h4>
+              <ul>
+                {exp.points.map((point, idx) => (
+                  <li key={idx}>{point}</li>
+                ))}
+              </ul>
+            </VerticalTimelineElement>
+          ))}
+        </VerticalTimeline>
+      </div>
+    </>
   );
 }
