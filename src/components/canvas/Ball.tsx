@@ -8,6 +8,8 @@ import {
   useTexture,
 } from "@react-three/drei";
 
+import './styles.css';
+
 import CanvasLoader from "../Loader";
 
 // @ts-ignore
@@ -41,21 +43,22 @@ const Ball = (props) => {
 // @ts-ignore
 const BallCanvas = ({ icon }) => {
   return (
-    <Canvas
-      frameloop='demand'
-      dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true }}
-    >
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls
-         enableZoom={false}
-         enablePan={false}
-        />
-        <Ball imgUrl={icon} />
-      </Suspense>
-
-      <Preload all />
-    </Canvas>
+    <div className="ball-container">
+      <Canvas
+        frameloop='demand'
+        dpr={[1, 2]}
+        gl={{ preserveDrawingBuffer: true }}
+      >
+        <Suspense fallback={<CanvasLoader />}>
+          <OrbitControls
+            enableZoom={false}
+            enablePan={false}
+          />
+          <Ball imgUrl={icon} />
+        </Suspense>
+        <Preload all />
+      </Canvas>
+    </div>
   );
 };
 

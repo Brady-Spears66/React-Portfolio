@@ -1,21 +1,20 @@
-
 // Importing tech logos
-import  css from './assets/tech/css.png';
-import  docker from './assets/tech/docker.png';
-import  figma from './assets/tech/figma.png';
-import  git from './assets/tech/git.png';
-import  html from './assets/tech/html.png';
-import  javascript from './assets/tech/javascript.png';
-import  mongodb from './assets/tech/mongodb.png';
-import  typescript from './assets/tech/typescript.png';
-import  reactjs from './assets/tech/reactjs.png';
-import  nodejs from './assets/tech/nodejs.png';
-import  tailwind from './assets/tech/tailwind.png';
-import  redux from './assets/tech/redux.png';
-import  threejs from './assets/tech/threejs.svg';
+import css from './assets/tech/css.png';
+import docker from './assets/tech/docker.png';
+import figma from './assets/tech/figma.png';
+import git from './assets/tech/git.png';
+import html from './assets/tech/html.png';
+import javascript from './assets/tech/javascript.png';
+import mongodb from './assets/tech/mongodb.png';
+import typescript from './assets/tech/typescript.png';
+import reactjs from './assets/tech/reactjs.png';
+import nodejs from './assets/tech/nodejs.png';
+import tailwind from './assets/tech/tailwind.png';
+import redux from './assets/tech/redux.png';
+import threejs from './assets/tech/threejs.svg';
 
 // Importing experience logos
-import southeasternLogo from './images/SELS.jfif'
+import southeasternLogo from './images/SELS.jfif';
 import navistarLogo from './images/navistar.png';
 import srcLogo from './images/src.png';
 
@@ -23,7 +22,7 @@ import srcLogo from './images/src.png';
 import { Experience, Technology } from "./types";
 
 // Creating a list of experiences
-export const experiences : Experience[] = [
+export const experiences: Experience[] = [
     {
         date: "June, 2019 - August, 2021",
         title: "IT Assistant",
@@ -61,69 +60,82 @@ export const experiences : Experience[] = [
         company: "SRC Inc.",
         points: [
             "Developed a dynamic and responsive user interface utilizing React, TypeScript, Material UI, and Redux, significantly improving user experience and operational efficiency.",
-        "Integrated Plotly with React to create interactive maps and data visualizations, enhancing the user's ability to interpret complex signal data intuitively.",
-        "Engineered a robust Python server using Quart, providing reliable backend support and seamless API integrations to enhance overall system performance.",
-        "Designed and implemented a complex graph data structure to efficiently manage and execute calls to a large language model (LLM), optimizing data processing workflows and improving the accuracy of results.",
-        "Conducted comprehensive analysis and manipulation of 300 unique radar signals by leveraging JSON and Python, contributing to sophisticated signal analysis and advancing the project's data interpretation capabilities.",
-        "Utilized pandas to work with CSV files, performing data cleaning, transformation, and analysis to support various aspects of the project.",
-        "Created an LLM evaluator framework to test and validate responses from the large language model, ensuring the quality and reliability of outputs.",
-        "Utilized prompt engineering techniques to craft precise and effective queries, extracting accurate and relevant results from LLM calls, thereby enhancing the quality and reliability of outputs."
+            "Integrated Plotly with React to create interactive maps and data visualizations, enhancing the user's ability to interpret complex signal data intuitively.",
+            "Engineered a robust Python server using Quart, providing reliable backend support and seamless API integrations to enhance overall system performance.",
+            "Designed and implemented a complex graph data structure to efficiently manage and execute calls to a large language model (LLM), optimizing data processing workflows and improving the accuracy of results.",
+            "Conducted comprehensive analysis and manipulation of 300 unique radar signals by leveraging JSON and Python, contributing to sophisticated signal analysis and advancing the project's data interpretation capabilities.",
+            "Utilized pandas to work with CSV files, performing data cleaning, transformation, and analysis to support various aspects of the project.",
+            "Created an LLM evaluator framework to test and validate responses from the large language model, ensuring the quality and reliability of outputs.",
+            "Utilized prompt engineering techniques to craft precise and effective queries, extracting accurate and relevant results from LLM calls, thereby enhancing the quality and reliability of outputs."
         ],
         logo: srcLogo
     }
 ]
 
-export const technologies: Technology[] = [
+// Categorizing technologies
+export const languages: Technology[] = [
     {
-      name: "HTML 5",
-      icon: html,
+        name: "HTML 5",
+        icon: html,
     },
     {
-      name: "CSS 3",
-      icon: css,
+        name: "CSS 3",
+        icon: css,
     },
     {
-      name: "JavaScript",
-      icon: javascript,
+        name: "JavaScript",
+        icon: javascript,
     },
     {
-      name: "TypeScript",
-      icon: typescript,
+        name: "TypeScript",
+        icon: typescript,
+    },
+];
+
+export const librariesFrameworks: Technology[] = [
+    {
+        name: "React JS",
+        icon: reactjs,
     },
     {
-      name: "React JS",
-      icon: reactjs,
+        name: "Redux Toolkit",
+        icon: redux,
     },
     {
-      name: "Redux Toolkit",
-      icon: redux,
+        name: "Tailwind CSS",
+        icon: tailwind,
     },
     {
-      name: "Tailwind CSS",
-      icon: tailwind,
+        name: "Three JS",
+        icon: threejs,
+    },
+];
+
+export const tools: Technology[] = [
+    {
+        name: "git",
+        icon: git,
     },
     {
-      name: "Node JS",
-      icon: nodejs,
+        name: "figma",
+        icon: figma,
     },
     {
-      name: "MongoDB",
-      icon: mongodb,
+        name: "docker",
+        icon: docker,
     },
+];
+
+export const databases: Technology[] = [
     {
-      name: "Three JS",
-      icon: threejs,
+        name: "MongoDB",
+        icon: mongodb,
     },
+];
+
+export const backend: Technology[] = [
     {
-      name: "git",
-      icon: git,
+        name: "Node JS",
+        icon: nodejs,
     },
-    {
-      name: "figma",
-      icon: figma,
-    },
-    {
-      name: "docker",
-      icon: docker,
-    },
-  ];
+];
