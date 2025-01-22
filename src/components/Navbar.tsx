@@ -24,8 +24,11 @@ function ResponsiveAppBar() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // const backgroundColor = theme.palette.mode === 'dark'
+  //       ? 'rgba(255, 255, 255, 0.06)' : 'grey';
   const backgroundColor = theme.palette.mode === 'dark'
         ? 'rgba(255, 255, 255, 0.06)' : 'grey';
+
 
   type navItem = {
     label: string;
@@ -210,10 +213,13 @@ function ResponsiveAppBar() {
                   py: 1,
                   color: 'white',
                   fontSize: { md: '0.7rem', lg: '1.2rem' },
-                  borderBottom: location.pathname === item.path ? '2px solid white' : '2px solid transparent',
+                  borderBottom: location.pathname === item.path ? '2px solid #19bdcf' : '2px solid transparent',
                   '&:hover': {
                     backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                    borderBottomColor: 'rgb(25, 190, 207)'
+                    borderBottomColor: location.pathname === item.path ? '#19bdcf': 'transparent',
+                  },
+                  '&:focus': {
+                    outline: 'none'
                   },
                 }}
               >
