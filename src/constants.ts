@@ -1,17 +1,20 @@
 // Importing tech logos
+import bootstrap from './assets/tech/bootstrap.png';
+import csharp from './assets/tech/csharp.png';
+import cpp from './assets/tech/cpp.png';
 import css from './assets/tech/css.png';
-import docker from './assets/tech/docker.png';
-import figma from './assets/tech/figma.png';
+import firebase from './assets/tech/firebase.png';
 import git from './assets/tech/git.png';
 import html from './assets/tech/html.png';
+import java from './assets/tech/java.png';
 import javascript from './assets/tech/javascript.png';
-import mongodb from './assets/tech/mongodb.png';
-import typescript from './assets/tech/typescript.png';
+import maui from './assets/tech/maui.png';
+import python from './assets/tech/python.png';
 import reactjs from './assets/tech/reactjs.png';
-import nodejs from './assets/tech/nodejs.png';
-import tailwind from './assets/tech/tailwind.png';
 import redux from './assets/tech/redux.png';
 import threejs from './assets/tech/threejs.svg';
+import typescript from './assets/tech/typescript.png';
+import xaml from './assets/tech/xaml.png';
 
 // Importing experience logos
 import southeasternLogo from './images/SELS.jfif';
@@ -90,6 +93,22 @@ export const languages: Technology[] = [
         name: "TypeScript",
         icon: typescript,
     },
+    {
+        name: "C#",
+        icon: csharp,
+    },
+    {
+        name: "C++",
+        icon: cpp,
+    },
+    {
+        name: "Java",
+        icon: java,
+    },
+    {
+        name: "Python",
+        icon: python,
+    },
 ];
 
 export const librariesFrameworks: Technology[] = [
@@ -102,40 +121,30 @@ export const librariesFrameworks: Technology[] = [
         icon: redux,
     },
     {
-        name: "Tailwind CSS",
-        icon: tailwind,
-    },
-    {
         name: "Three JS",
         icon: threejs,
+    },
+    {
+        name: "Bootstrap",
+        icon: bootstrap,
+    },
+    {
+        name: ".NET MAUI",
+        icon: maui,
+    },
+    {
+        name: "XAML",
+        icon: xaml,
     },
 ];
 
 export const tools: Technology[] = [
     {
-        name: "git",
+        name: "Git",
         icon: git,
     },
     {
-        name: "figma",
-        icon: figma,
-    },
-    {
-        name: "docker",
-        icon: docker,
-    },
-];
-
-export const databases: Technology[] = [
-    {
-        name: "MongoDB",
-        icon: mongodb,
-    },
-];
-
-export const backend: Technology[] = [
-    {
-        name: "Node JS",
-        icon: nodejs,
+        name: "Google Firebase",
+        icon: firebase,
     },
 ];
