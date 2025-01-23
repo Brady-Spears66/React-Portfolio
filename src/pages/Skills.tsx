@@ -10,7 +10,7 @@ const TechItem = React.memo(({ technology }) => {
 
    return (
        <Grid 
-           size={{ lg: 2}} 
+           size={{xs: 4,  sm: 4, md: 3,  lg: 2}} 
            justifyContent="center" 
            alignItems="center" 
            sx={{ 
@@ -49,7 +49,7 @@ export function Skills() {
    // @ts-ignore
    const renderTechSection = (title, technologies) => (
        <>
-           <Typography variant={'h3'} sx={{ padding: 2}}>{title}</Typography>
+           <Typography variant={'h3'} textAlign={'center'} sx={{ padding: 2, whiteSpace: 'pre-line'}}>{title}</Typography>
            <Grid container spacing={6} justifyContent="center" sx={{width: '100%', paddingBottom: 10}}>
                {technologies.map((
                 // @ts-ignore
@@ -68,7 +68,7 @@ export function Skills() {
    return (
        <Stack direction={'column'} spacing={2} justifyContent={'center'} alignItems={'center'} sx={{width: '100%'}}>
            {renderTechSection('Languages', languages)}
-           {renderTechSection('Libraries / Frameworks', librariesFrameworks)}
+           {renderTechSection('Libraries\n+\nFrameworks', librariesFrameworks)}
            {renderTechSection('Tools', tools)}
        </Stack>
    );

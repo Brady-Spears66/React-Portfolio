@@ -7,4 +7,11 @@
     justify-content: center;
     align-items: center;
   }
+
+  @media screen and (max-width: 899px) {
+    .ball-container {
+      width: 25vw;
+      height: 25vw;
+    }
+  }
   

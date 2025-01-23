@@ -9,6 +9,7 @@ import html from './assets/tech/html.png';
 import java from './assets/tech/java.png';
 import javascript from './assets/tech/javascript.png';
 import maui from './assets/tech/maui.png';
+import mui from './assets/tech/mui.png';
 import python from './assets/tech/python.png';
 import reactjs from './assets/tech/reactjs.png';
 import redux from './assets/tech/redux.png';
@@ -127,6 +128,10 @@ export const librariesFrameworks: Technology[] = [
     {
         name: "Three JS",
         icon: threejs,
+    },
+    {
+        name: "Material UI",
+        icon: mui,
     },
     {
         name: "Bootstrap",
