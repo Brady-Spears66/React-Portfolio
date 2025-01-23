@@ -15,7 +15,6 @@ import reactjs from './assets/tech/reactjs.png';
 import redux from './assets/tech/redux.png';
 import threejs from './assets/tech/threejs.svg';
 import typescript from './assets/tech/typescript.png';
-import xaml from './assets/tech/xaml.png';
 
 // Importing experience logos
 import southeasternLogo from './images/SELS.jfif';
@@ -109,10 +108,6 @@ export const languages: Technology[] = [
     {
         name: "Python",
         icon: python,
-    },
-    {
-        name: "XAML",
-        icon: xaml,
     },
 ];
 
