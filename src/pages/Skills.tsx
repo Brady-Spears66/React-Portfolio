@@ -49,8 +49,8 @@ export function Skills() {
    // @ts-ignore
    const renderTechSection = (title, technologies) => (
        <>
-           <Typography variant={'h3'} sx={{padding: 2}}>{title}</Typography>
-           <Grid container spacing={6} justifyContent="center" sx={{width: '100%'}}>
+           <Typography variant={'h3'} sx={{ padding: 2}}>{title}</Typography>
+           <Grid container spacing={6} justifyContent="center" sx={{width: '100%', paddingBottom: 10}}>
                {technologies.map((
                 // @ts-ignore
                 technology

@@ -78,11 +78,11 @@ export const experiences: Experience[] = [
 // Categorizing technologies
 export const languages: Technology[] = [
     {
-        name: "HTML 5",
+        name: "HTML",
         icon: html,
     },
     {
-        name: "CSS 3",
+        name: "CSS",
         icon: css,
     },
     {
@@ -109,6 +109,10 @@ export const languages: Technology[] = [
         name: "Python",
         icon: python,
     },
+    {
+        name: "XAML",
+        icon: xaml,
+    },
 ];
 
 export const librariesFrameworks: Technology[] = [
@@ -117,7 +121,7 @@ export const librariesFrameworks: Technology[] = [
         icon: reactjs,
     },
     {
-        name: "Redux Toolkit",
+        name: "Redux JS",
         icon: redux,
     },
     {
@@ -131,10 +135,6 @@ export const librariesFrameworks: Technology[] = [
     {
         name: ".NET MAUI",
         icon: maui,
-    },
-    {
-        name: "XAML",
-        icon: xaml,
     },
 ];
 

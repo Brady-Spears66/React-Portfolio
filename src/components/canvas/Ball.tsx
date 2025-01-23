@@ -1,6 +1,6 @@
 import React, { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Decal, Float, Preload, useTexture } from "@react-three/drei";
+import { Decal, Float, OrbitControls, Preload, useTexture } from "@react-three/drei";
 
 import './styles.css';
 
@@ -21,7 +21,7 @@ const Ball = (props) => {
   });
 
   return (
-    <Float speed={2} rotationIntensity={0.5} floatIntensity={2}>
+    <Float speed={10} floatingRange={[0, .6]} floatIntensity={2}>
       <mesh 
         // @ts-ignore
         ref={meshRef} 
@@ -29,6 +29,11 @@ const Ball = (props) => {
         receiveShadow 
         scale={2.75}
       >
+        <OrbitControls
+          enableZoom={false}
+          enablePan={false}
+          enableRotate={true}
+        />
         <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial
           color="#fff8eb"
