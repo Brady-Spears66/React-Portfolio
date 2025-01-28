@@ -11,10 +11,14 @@ import javascript from './assets/tech/javascript.png';
 import maui from './assets/tech/maui.png';
 import mui from './assets/tech/mui.png';
 import python from './assets/tech/python.png';
+import putty from './assets/tech/putty.png';
 import reactjs from './assets/tech/reactjs.png';
 import redux from './assets/tech/redux.png';
 import threejs from './assets/tech/threejs.svg';
 import typescript from './assets/tech/typescript.png';
+import vmware from './assets/tech/vmware.png';
+import winscp from './assets/tech/winscp.png';
+import xaml from './assets/tech/xaml.png'
 
 // Importing experience logos
 import southeasternLogo from './images/SELS.jfif';
@@ -109,6 +113,10 @@ export const languages: Technology[] = [
         name: "Python",
         icon: python,
     },
+    {
+        name: "XAML",
+        icon: xaml,
+    },
 ];
 
 export const librariesFrameworks: Technology[] = [
@@ -146,5 +154,17 @@ export const tools: Technology[] = [
     {
         name: "Google Firebase",
         icon: firebase,
+    },
+    {
+        name: "PuTTy",
+        icon: putty,
+    },
+    {
+        name: "WinSCP",
+        icon: winscp,
+    },
+    {
+        name: "VMWare",
+        icon: vmware,
     },
 ];
