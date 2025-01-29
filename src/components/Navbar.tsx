@@ -156,7 +156,11 @@ function ResponsiveAppBar() {
             >
               {navItems.map((item) => (
                 <MenuItem key={item.label} onClick={() => menuItemClicked(item)}>
-                  <Typography sx={{ textAlign: 'center' }}>{item.label}</Typography>
+                  <Typography sx={{ 
+                                    textAlign: 'center', 
+                                    color: location.pathname == item.path ? theme.palette.secondary.main : theme.palette.text.primary,
+
+                   }}>{item.label}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -208,9 +212,9 @@ function ResponsiveAppBar() {
                 sx={{ 
                   px: 2,
                   py: 1,
-                  color: 'white',
+                  color: location.pathname == item.path ? theme.palette.secondary.main : theme.palette.text.primary,
                   fontSize: { md: '0.7rem', lg: '1.2rem' },
-                  borderBottom: location.pathname === item.path ? '2px solid white' : '2px solid transparent',
+                  // borderBottom: location.pathname === item.path ? '2px solid white' : '2px solid transparent',
                   '&:hover': {
                     backgroundColor: 'rgba(255, 255, 255, 0.1)',
                     borderBottomColor: 'rgb(25, 190, 207)'

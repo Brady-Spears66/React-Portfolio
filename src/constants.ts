@@ -4,14 +4,20 @@ import csharp from './assets/tech/csharp.png';
 import cpp from './assets/tech/cpp.png';
 import css from './assets/tech/css.png';
 import firebase from './assets/tech/firebase.png';
+import flask from './assets/tech/flask.svg';
 import git from './assets/tech/git.png';
 import html from './assets/tech/html.png';
 import java from './assets/tech/java.png';
 import javascript from './assets/tech/javascript.png';
+import langchain from './assets/tech/langchain.svg'
+import llamaIndex from './assets/tech/llamaindex.png';
+import linux from './assets/tech/linux.png';
 import maui from './assets/tech/maui.png';
 import mui from './assets/tech/mui.png';
-import python from './assets/tech/python.png';
+import plotly from './assets/tech/plotly.svg';
 import putty from './assets/tech/putty.png';
+import python from './assets/tech/python.png';
+import quart from './assets/tech/quart.svg';
 import reactjs from './assets/tech/reactjs.png';
 import redux from './assets/tech/redux.png';
 import threejs from './assets/tech/threejs.svg';
@@ -121,6 +127,25 @@ export const languages: Technology[] = [
 
 export const librariesFrameworks: Technology[] = [
     {
+        name: "Flask",
+        icon: flask,
+    },
+    {
+        name: "Quart",
+        icon: quart,
+    },
+    {
+        name: "LangChain",
+        icon: langchain,
+    },{
+        name: "Llama Index",
+        icon: llamaIndex,
+    },
+    {
+        name: "Plotly",
+        icon: plotly,
+    },
+    {
         name: "React JS",
         icon: reactjs,
     },
@@ -156,15 +181,19 @@ export const tools: Technology[] = [
         icon: firebase,
     },
     {
+        name: "Linux",
+        icon: linux,
+    },
+    {
         name: "PuTTy",
         icon: putty,
     },
     {
-        name: "WinSCP",
-        icon: winscp,
-    },
-    {
         name: "VMWare",
         icon: vmware,
+    },
+    {
+        name: "WinSCP",
+        icon: winscp,
     },
 ];

@@ -74,7 +74,7 @@ export function Skills() {
                direction={'row'} 
                spacing={2} 
                justifyContent={'center'}
-               sx={{ borderBottom: 1, borderColor: 'divider' }}
+               sx={{ borderBottom: 1, borderColor: 'divider' , pb: 5}}
            >
                {Object.entries(categories).map(([key, { title }]) => (
                    <Button
@@ -82,10 +82,10 @@ export function Skills() {
                        onClick={() => setSelectedCategory(key)}
                        sx={{
                         textTransform: 'none',
-                        color: theme.palette.text.primary,
-                        borderBottom: selectedCategory === key ? 2 : 0,
-                        borderColor: selectedCategory === key ? theme.palette.primary.main : 'transparent',
-                        borderRadius: 0,
+                        color: selectedCategory === key ? theme.palette.secondary.main : theme.palette.text.primary,
+                        // borderBottom: selectedCategory === key ? 2 : 0,
+                        // borderColor: selectedCategory === key ? theme.palette.primary.main : 'transparent',
+                        borderRadius: 5,
                         py: {xs: 1, sm: 2}, // Reduced padding on mobile
                         px: {xs: 2, sm: 4}, // Reduced padding on mobile
                         fontSize: {xs: '1rem', sm: '1.25rem'}, // Smaller font on mobile
@@ -94,11 +94,7 @@ export function Skills() {
                         minWidth: {xs: 'unset', sm: '200px'}, // Remove min-width on mobile
                         maxWidth: {xs: '300px', sm: 'unset'}, // Limit width on mobile
                         '&:hover': {
-                            backgroundColor: 'transparent',
-                            borderBottom: 2,
-                            borderColor: selectedCategory === key 
-                                ? theme.palette.primary.main 
-                                : theme.palette.primary.light,
+                            backgroundColor: theme.palette.action.hover,
                         }
                     }}
                    >
