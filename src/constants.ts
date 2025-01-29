@@ -32,7 +32,7 @@ import navistarLogo from './images/navistar.png';
 import srcLogo from './images/src.png';
 
 // Importing types
-import { Experience, Technology } from "./types";
+import { Experience, Technology, Project} from "./types";
 
 // Creating a list of experiences
 export const experiences: Experience[] = [
@@ -196,4 +196,12 @@ export const tools: Technology[] = [
         name: "WinSCP",
         icon: winscp,
     },
+];
+
+// Sample projects data
+export const projects: Project[] = [
+    { id: 1, title: 'Financial Planning App', category: 'Web App', image: '/images/project1.jpg', description: 'A platform connecting users with financial advisors.' },
+    { id: 2, title: 'AI Defense System', category: 'AI', image: '/images/project2.jpg', description: 'An AI-powered defense analysis tool.' },
+    { id: 3, title: 'Real Estate Dashboard', category: 'Dashboard', image: '/images/project3.jpg', description: 'A real estate analytics and management dashboard.' },
+    { id: 4, title: 'Stock Market Predictor', category: 'AI', image: '/images/project4.jpg', description: 'An ML model for stock market forecasting.' }
 ];

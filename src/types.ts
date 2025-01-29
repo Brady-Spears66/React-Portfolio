@@ -13,3 +13,12 @@ export type Technology = {
     name: string;
     icon: string;
 }
+
+// Declaring a type for projects for the projects page
+export type Project = {
+    id: number,
+    title: string,
+    category: string,
+    image: string,
+    description: string,
+}
