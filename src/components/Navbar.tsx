@@ -221,7 +221,7 @@ function ResponsiveAppBar() {
                   px: 2,
                   py: 1,
                   borderRadius: 5,
-                  color: location.pathname == item.path ? theme.palette.secondary.main : theme.palette.text.primary,
+                  color: location.pathname == item.path ? theme.palette.secondary.main : 'white',
                   fontSize: { md: '0.7rem', lg: '1.2rem' },
                   // borderBottom: location.pathname === item.path ? '2px solid white' : '2px solid transparent',
                   '&:hover': {
