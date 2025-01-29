@@ -135,6 +135,14 @@ function ResponsiveAppBar() {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
+              sx={{
+                '&:focus': {
+                    outline: 'none',
+                },
+                '&:focus-visible': {
+                    outline: 'none',
+                }
+              }}
             >
               <MenuIcon />
             </IconButton>
@@ -212,12 +220,19 @@ function ResponsiveAppBar() {
                 sx={{ 
                   px: 2,
                   py: 1,
+                  borderRadius: 5,
                   color: location.pathname == item.path ? theme.palette.secondary.main : theme.palette.text.primary,
                   fontSize: { md: '0.7rem', lg: '1.2rem' },
                   // borderBottom: location.pathname === item.path ? '2px solid white' : '2px solid transparent',
                   '&:hover': {
                     backgroundColor: 'rgba(255, 255, 255, 0.1)',
                     borderBottomColor: 'rgb(25, 190, 207)'
+                  },
+                  '&:focus': {
+                      outline: 'none',
+                  },
+                  '&:focus-visible': {
+                      outline: 'none',
                   },
                 }}
               >

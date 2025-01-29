@@ -95,7 +95,13 @@ export function Skills() {
                         maxWidth: {xs: '300px', sm: 'unset'}, // Limit width on mobile
                         '&:hover': {
                             backgroundColor: theme.palette.action.hover,
-                        }
+                        },
+                        '&:focus': {
+                            outline: 'none',
+                        },
+                        '&:focus-visible': {
+                            outline: 'none',
+        }
                     }}
                    >
                        {title}
