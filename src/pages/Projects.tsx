@@ -10,7 +10,7 @@ function Projects() {
     const [openDialog, setOpenDialog] = useState(false);
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-    const categories = ['All', 'Web App', 'AI', 'Dashboard'];
+    const categories = ['All', 'Web Apps', 'AI', "Mobile Apps"];
 
     const filteredProjects = selectedCategory === 'All' 
         ? projects 

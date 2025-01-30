@@ -26,6 +26,12 @@ import vmware from './assets/tech/vmware.png';
 import winscp from './assets/tech/winscp.png';
 import xaml from './assets/tech/xaml.png'
 
+// Importing Project images
+import nfl from './assets/projects/NFL.png';
+import recipedia from './assets/projects/recipedia.png';
+import stocksite from './assets/projects/stocksite.jpeg';
+import tourguide from './assets/projects/tourguide.jpeg';
+
 // Importing experience logos
 import southeasternLogo from './images/SELS.jfif';
 import navistarLogo from './images/navistar.png';
@@ -200,8 +206,31 @@ export const tools: Technology[] = [
 
 // Sample projects data
 export const projects: Project[] = [
-    { id: 1, title: 'Financial Planning App', category: 'Web App', image: '/images/project1.jpg', description: 'A platform connecting users with financial advisors.' },
-    { id: 2, title: 'AI Defense System', category: 'AI', image: '/images/project2.jpg', description: 'An AI-powered defense analysis tool.' },
-    { id: 3, title: 'Real Estate Dashboard', category: 'Dashboard', image: '/images/project3.jpg', description: 'A real estate analytics and management dashboard.' },
-    { id: 4, title: 'Stock Market Predictor', category: 'AI', image: '/images/project4.jpg', description: 'An ML model for stock market forecasting.' }
+    { 
+        id: 1, 
+        title: 'Recipedia', 
+        category: 'Web Apps', 
+        image: recipedia, 
+        description: 'Web application that provides recipe data and keeps track of a user\'s virtual pantry. This project was designed with a class team utilizing agile project development. Developed using HTML, CSS, JavaScript, and the Spoonacular API' 
+    },
+    { 
+        id: 2, 
+        title: 'Stock Site', 
+        category: 'Web Apps', 
+        image: stocksite, 
+        description: 'Web application that pulls stock data from polygon.io API to display stock ticker data that the user has selected. The user\'s viewed stock history is stored so it can be easily referenced by date. This project was developed for a class project. Developed using HTML, CSS, BootStrap, JavaScript, SQLite, and PHP.  ' 
+    },
+    { 
+        id: 3, 
+        title: 'AI Tour Guide', 
+        category: 'AI', 
+        image: tourguide, 
+        description: 'Project for Miami University that utilizes a large language model and retrieval augmented generation (RAG) to create a tour guide that can answer questions about specific data including stats about Miami University\' college of engineering, important locations, and department information. This application converts speech to text and text back to speech so the user can verbally communcate with the AI assistant. This project was developed using Python, Django, LlamaIndex, HTML, CSS, and JavaScript. ' 
+    },
+    { 
+        id: 4, 
+        title: 'NFL Power Rankings',
+        category: 'Mobile Apps',
+        image: nfl,
+        description: 'A mobile app that displays the NFL power rankings from the 2022 season. \n\nThis app was developed using .NET MAUI with XAML to allow for multi-platform capabilities' }
 ];
