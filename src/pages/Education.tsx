@@ -11,7 +11,7 @@ export function Education() {
                             component="img"
                             image={miamiUniversity}
                             alt="Miami University"
-                            sx={{ width: 80, height: 80, objectFit: 'contain', mr: 2 }}
+                            sx={{ width: '10vw', height: '10vw', objectFit: 'contain', mr: 2 }}
                         />
                         <CardContent>
                             <Typography variant="h6">
