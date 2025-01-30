@@ -84,19 +84,6 @@ function Projects() {
                             />
                             <CardContent>
                                 <Typography variant="h6">{project.title}</Typography>
-                                {/* Conditionally render link if it exists */}
-                                {project.link && (
-                                    <Button 
-                                        href={project.link} 
-                                        target="_blank" 
-                                        rel="noopener noreferrer" 
-                                        variant="contained" 
-                                        color="primary" 
-                                        sx={{ mt: 1 }}
-                                    >
-                                        View Project
-                                    </Button>
-                                )}
                             </CardContent>
                         </Card>
                     </Grid>
