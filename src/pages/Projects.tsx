@@ -28,7 +28,7 @@ function Projects() {
 
     return (
         <div style={{ padding: '2rem', textAlign: 'center' }}>
-            {/* Category Buttons (Styled like Skills Component) */}
+            {/* Category Buttons */}
             <Stack 
                 direction={'row'} 
                 spacing={2} 
@@ -55,9 +55,6 @@ function Projects() {
                             },
                             '&:focus': {
                                 outline: 'none',
-                            },
-                            '&:focus-visible': {
-                                outline: 'none',
                             }
                         }}
                     >
@@ -76,16 +73,30 @@ function Projects() {
                                 transition: '0.3s', 
                                 '&:hover': { transform: 'scale(1.05)' } 
                             }}
-                            onClick={() => handleOpenDialog(project)}
                         >
                             <CardMedia 
                                 component="img"
                                 height="180"
                                 image={project.image}
                                 alt={project.title}
+                                onClick={() => handleOpenDialog(project)}
+                                sx={{ cursor: 'pointer' }}
                             />
                             <CardContent>
                                 <Typography variant="h6">{project.title}</Typography>
+                                {/* Conditionally render link if it exists */}
+                                {project.link && (
+                                    <Button 
+                                        href={project.link} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer" 
+                                        variant="contained" 
+                                        color="primary" 
+                                        sx={{ mt: 1 }}
+                                    >
+                                        View Project
+                                    </Button>
+                                )}
                             </CardContent>
                         </Card>
                     </Grid>
@@ -102,7 +113,31 @@ function Projects() {
                             <Typography variant="body1">{selectedProject.description}</Typography>
                         </DialogContent>
                         <DialogActions>
-                            <Button onClick={handleCloseDialog} color="primary">Close</Button>
+                            {/* Conditionally render link button if it exists */}
+                            {selectedProject.link && (
+                                <Button 
+                                    href={selectedProject.link} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    color="primary"
+                                    sx={{
+                                        '&:hover': {
+                                            color: "rgb(25, 190, 207)"
+                                        }
+                                    }}
+                                >
+                                    View Project
+                                </Button>
+                            )}
+                            <Button 
+                            onClick={handleCloseDialog} 
+                            color="primary"
+                            sx={{
+                                '&:hover': {
+                                    color: "rgb(25, 190, 207)"
+                                }
+                            }}
+                            >Close</Button>
                         </DialogActions>
                     </>
                 )}

@@ -209,25 +209,18 @@ export const tools: Technology[] = [
 // Projects data
 export const projects: Project[] = [
     { 
-        id: 1, 
-        title: 'Recipedia', 
-        category: 'Web Apps', 
-        image: recipedia, 
-        description: 'Web application that provides recipe data and keeps track of a user\'s virtual pantry. This project was designed with a class team utilizing agile project development. Developed using HTML, CSS, JavaScript, and the Spoonacular API' 
-    },
-    { 
-        id: 2, 
-        title: 'Stock Site', 
-        category: 'Web Apps', 
-        image: stocksite, 
-        description: 'Web application that pulls stock data from polygon.io API to display stock ticker data that the user has selected. The user\'s viewed stock history is stored so it can be easily referenced by date. This project was developed for a class project. Developed using HTML, CSS, BootStrap, JavaScript, SQLite, and PHP.  ' 
-    },
-    { 
         id: 3, 
         title: 'AI Tour Guide', 
         category: 'AI', 
-        image: tourguide, 
+        image: tourguide,
         description: 'Project for Miami University that utilizes a large language model and retrieval augmented generation (RAG) to create a tour guide that can answer questions about specific data including stats about Miami University\' college of engineering, important locations, and department information. This application converts speech to text and text back to speech so the user can verbally communcate with the AI assistant. This project was developed using Python, Django, LlamaIndex, HTML, CSS, and JavaScript. ' 
+    },
+    { 
+        id: 6, 
+        title: 'LLM Response Evaluator', 
+        category: 'AI', 
+        image: llmEvaluator, 
+        description: 'A framework designed to evaluate and validate responses from large language models (LLMs), ensuring accuracy and reliability of AI-generated content. Developed using Python, this application leverages prompt engineering techniques and a structured evaluation pipeline to test LLM responses systematically. It features advanced data processing capabilities, utilizing graph-based execution models to optimize query performance and response validation.' 
     },
     { 
         id: 4, 
@@ -244,10 +237,19 @@ export const projects: Project[] = [
         description: 'An AI-powered web application designed to visualize and analyze radar signal data with intelligent processing workflows. Utilizing React, TypeScript, Material UI, Redux, and Plotly for dynamic front-end visualization, the backend is built with Python and Quart. LangGraph was implemented to manage complex execution flows for analyzing over 300 unique radar signals, optimizing signal interpretation and enhancing analytical accuracy.' 
     },
     { 
-        id: 6, 
-        title: 'LLM Response Evaluator', 
-        category: 'AI', 
-        image: llmEvaluator, 
-        description: 'A framework designed to evaluate and validate responses from large language models (LLMs), ensuring accuracy and reliability of AI-generated content. Developed using Python, this application leverages prompt engineering techniques and a structured evaluation pipeline to test LLM responses systematically. It features advanced data processing capabilities, utilizing graph-based execution models to optimize query performance and response validation.' 
+        id: 1, 
+        title: 'Recipedia', 
+        category: 'Web Apps', 
+        image: recipedia, 
+        link: 'https://recipedia-cc9fb.web.app/',
+        description: 'Web application that provides recipe data and keeps track of a user\'s virtual pantry. This project was designed with a class team utilizing agile project development. Developed using HTML, CSS, JavaScript, and the Spoonacular API' 
+    },
+    { 
+        id: 2, 
+        title: 'Stock Site', 
+        category: 'Web Apps', 
+        image: stocksite, 
+        link: 'https://ceclnx01.cec.miamioh.edu/~spearsb2/Stock_Site/cse383_final/home.html',
+        description: 'Web application that pulls stock data from polygon.io API to display stock ticker data that the user has selected. The user\'s viewed stock history is stored so it can be easily referenced by date. This project was developed for a class project. Developed using HTML, CSS, BootStrap, JavaScript, SQLite, and PHP.  ' 
     }
 ];
