@@ -10,7 +10,7 @@ function Projects() {
     const [openDialog, setOpenDialog] = useState(false);
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-    const categories = ['All', 'Web Apps', 'AI', "Mobile Apps"];
+    const categories = ['All', 'AI', "Mobile Apps", "Web Apps"];
 
     const filteredProjects = selectedCategory === 'All' 
         ? projects 
@@ -67,7 +67,7 @@ function Projects() {
             </Stack>
 
             {/* Projects Grid */}
-            <Grid container spacing={4} justifyContent="center">
+            <Grid container spacing={4} justifyContent="center" sx={{mt: 2 }}>
                 {filteredProjects.map((project) => (
                     <Grid item xs={12} sm={6} md={4} key={project.id}>
                         <Card 

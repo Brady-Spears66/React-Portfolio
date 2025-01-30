@@ -31,6 +31,8 @@ import nfl from './assets/projects/NFL.png';
 import recipedia from './assets/projects/recipedia.png';
 import stocksite from './assets/projects/stocksite.jpeg';
 import tourguide from './assets/projects/tourguide.jpeg';
+import radarVisualizer from './assets/projects/radarVizualizer.jpeg';
+import llmEvaluator from './assets/projects/llmEvaluator.jpeg';
 
 // Importing experience logos
 import southeasternLogo from './images/SELS.jfif';
@@ -204,7 +206,7 @@ export const tools: Technology[] = [
     },
 ];
 
-// Sample projects data
+// Projects data
 export const projects: Project[] = [
     { 
         id: 1, 
@@ -232,5 +234,20 @@ export const projects: Project[] = [
         title: 'NFL Power Rankings',
         category: 'Mobile Apps',
         image: nfl,
-        description: 'A mobile app that displays the NFL power rankings from the 2022 season. \n\nThis app was developed using .NET MAUI with XAML to allow for multi-platform capabilities' }
+        description: 'A mobile app that displays the NFL power rankings from the 2022 season. \n\nThis app was developed using .NET MAUI with XAML to allow for multi-platform capabilities' 
+    },
+    { 
+        id: 5, 
+        title: 'Radar Signal Visualizer', 
+        category: 'AI', 
+        image: radarVisualizer, 
+        description: 'An AI-powered web application designed to visualize and analyze radar signal data with intelligent processing workflows. Utilizing React, TypeScript, Material UI, Redux, and Plotly for dynamic front-end visualization, the backend is built with Python and Quart. LangGraph was implemented to manage complex execution flows for analyzing over 300 unique radar signals, optimizing signal interpretation and enhancing analytical accuracy.' 
+    },
+    { 
+        id: 6, 
+        title: 'LLM Response Evaluator', 
+        category: 'AI', 
+        image: llmEvaluator, 
+        description: 'A framework designed to evaluate and validate responses from large language models (LLMs), ensuring accuracy and reliability of AI-generated content. Developed using Python, this application leverages prompt engineering techniques and a structured evaluation pipeline to test LLM responses systematically. It features advanced data processing capabilities, utilizing graph-based execution models to optimize query performance and response validation.' 
+    }
 ];
