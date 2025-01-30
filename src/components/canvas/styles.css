@@ -1,0 +1,17 @@
+.ball-container {
+    width: 13vw;
+    height: 13vw;
+    max-width: 100%; /* Adjust the max-width as needed */
+    max-height: 100%; /* Adjust the max-height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 899px) {
+    .ball-container {
+      width: 25vw;
+      height: 25vw;
+    }
+  }
+  

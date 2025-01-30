@@ -148,7 +148,13 @@ function Contact() {
                                     fullWidth
                                     sx={{
                                         backgroundColor: "rgb(25, 190, 207)",
-                                        color: "black"
+                                        color: "black",
+                                        '&:focus': {
+                                            outline: 'none',
+                                        },
+                                        '&:focus-visible': {
+                                            outline: 'none',
+                                        },
                                     }}
                                 >
                                     Submit

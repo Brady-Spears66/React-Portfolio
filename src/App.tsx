@@ -22,7 +22,7 @@ const DarkTheme: ThemeOptions = createTheme({
             main: "#3f51v5"
         },
         secondary: {
-            main: "#f50057"
+            main: 'rgb(25, 190, 207)'
         }
     },
 });

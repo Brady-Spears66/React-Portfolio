@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import { experiences } from '../types';
+import { experiences } from '../constants';
 import { useTheme } from '@mui/material';
 
 export default function AlternateTimeline() {

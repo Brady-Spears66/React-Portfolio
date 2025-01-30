@@ -24,11 +24,8 @@ function ResponsiveAppBar() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // const backgroundColor = theme.palette.mode === 'dark'
-  //       ? 'rgba(255, 255, 255, 0.06)' : 'grey';
   const backgroundColor = theme.palette.mode === 'dark'
-        ? 'rgba(255, 255, 255, 0.06)' : 'grey';
-
+        ? '#101010' : 'grey';
 
   type navItem = {
     label: string;
@@ -138,6 +135,14 @@ function ResponsiveAppBar() {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
+              sx={{
+                '&:focus': {
+                    outline: 'none',
+                },
+                '&:focus-visible': {
+                    outline: 'none',
+                }
+              }}
             >
               <MenuIcon />
             </IconButton>
@@ -159,7 +164,11 @@ function ResponsiveAppBar() {
             >
               {navItems.map((item) => (
                 <MenuItem key={item.label} onClick={() => menuItemClicked(item)}>
-                  <Typography sx={{ textAlign: 'center' }}>{item.label}</Typography>
+                  <Typography sx={{ 
+                                    textAlign: 'center', 
+                                    color: location.pathname == item.path ? theme.palette.secondary.main : theme.palette.text.primary,
+
+                   }}>{item.label}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -211,15 +220,19 @@ function ResponsiveAppBar() {
                 sx={{ 
                   px: 2,
                   py: 1,
-                  color: 'white',
+                  borderRadius: 5,
+                  color: location.pathname == item.path ? theme.palette.secondary.main : 'white',
                   fontSize: { md: '0.7rem', lg: '1.2rem' },
-                  borderBottom: location.pathname === item.path ? '2px solid #19bdcf' : '2px solid transparent',
+                  // borderBottom: location.pathname === item.path ? '2px solid white' : '2px solid transparent',
                   '&:hover': {
                     backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                    borderBottomColor: location.pathname === item.path ? '#19bdcf': 'transparent',
+                    borderBottomColor: 'rgb(25, 190, 207)'
                   },
                   '&:focus': {
-                    outline: 'none'
+                      outline: 'none',
+                  },
+                  '&:focus-visible': {
+                      outline: 'none',
                   },
                 }}
               >
