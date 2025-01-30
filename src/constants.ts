@@ -34,13 +34,16 @@ import tourguide from './assets/projects/tourguide.jpeg';
 import radarVisualizer from './assets/projects/radarVizualizer.jpeg';
 import llmEvaluator from './assets/projects/llmEvaluator.jpeg';
 
+// Importing Education logos
+import miamiUniversity from './assets/education/miamiUniversity.png';
+
 // Importing experience logos
 import southeasternLogo from './images/SELS.jfif';
 import navistarLogo from './images/navistar.png';
 import srcLogo from './images/src.png';
 
 // Importing types
-import { Experience, Technology, Project} from "./types";
+import { Experience, Technology, Project, Education} from "./types";
 
 // Creating a list of experiences
 export const experiences: Experience[] = [
@@ -251,5 +254,15 @@ export const projects: Project[] = [
         image: stocksite, 
         link: 'https://ceclnx01.cec.miamioh.edu/~spearsb2/Stock_Site/cse383_final/home.html',
         description: 'Web application that pulls stock data from polygon.io API to display stock ticker data that the user has selected. The user\'s viewed stock history is stored so it can be easily referenced by date. This project was developed for a class project. Developed using HTML, CSS, BootStrap, JavaScript, SQLite, and PHP.  ' 
+    }
+];
+
+export const educations: Education[] = [
+    {
+        school: "Miami University",
+        degree: "Bachelor of Arts in Computer Science",
+        major: "Co-Major in Entrepreneurship",
+        expectedGraduation: "2025",
+        logo: miamiUniversity
     }
 ];
