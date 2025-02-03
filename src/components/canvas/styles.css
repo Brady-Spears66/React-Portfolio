@@ -13,5 +13,8 @@
       width: 25vw;
       height: 25vw;
     }
+    .ball-container canvas {
+      touch-action: none !important;
+    }
   }
   

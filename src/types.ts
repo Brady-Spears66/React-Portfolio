@@ -23,3 +23,12 @@ export type Project = {
     link?: string;
     description: string;
 }
+
+// Declaring a type for education for the education page
+export type Education = {
+    school: string;
+    degree: string;
+    major: string;
+    expectedGraduation: string;
+    logo: string;
+}
