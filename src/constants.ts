@@ -67,7 +67,7 @@ export const experiences: Experience[] = [
         company: "Navistar Inc.",
         points: [
             "Implemented an automated solution using VB configuration files, Windows Batch, and Windows Task Scheduler, ensuring seamless PC reboots and application startup.",
-            "Developed Nintex Workflows on our SharePoint site, automating processes such as requesting replacement PCs from IT and updating the Controls issues list.",
+            "Developed Nintex Workflows on a SharePoint site, automating processes such as requesting replacement PCs from IT and updating the Controls issues list.",
             "Established a test server and database for managing content on networked monitors supporting digital signage, enhancing control and visibility.",
             "Designed an interactive Visio diagram depicting the intricate interactions among devices and systems within a specific department.",
             "Utilized the company's Tortoise repository, promoting version control and providing a reference point for colleagues to access and review past work.",
@@ -93,7 +93,7 @@ export const experiences: Experience[] = [
             "Utilized prompt engineering techniques to craft precise and effective queries, extracting accurate and relevant results from LLM calls, thereby enhancing the quality and reliability of outputs."
         ],
         logo: srcLogo
-    }
+    },
 ]
 
 // Categorizing technologies
@@ -148,7 +148,8 @@ export const librariesFrameworks: Technology[] = [
     {
         name: "LangChain",
         icon: langchain,
-    },{
+    },
+    {
         name: "Llama Index",
         icon: llamaIndex,
     },
@@ -216,7 +217,7 @@ export const projects: Project[] = [
         title: 'AI Tour Guide', 
         category: 'AI', 
         image: tourguide,
-        description: 'Project for Miami University that utilizes a large language model and retrieval augmented generation (RAG) to create a tour guide that can answer questions about specific data including stats about Miami University\' college of engineering, important locations, and department information. This application converts speech to text and text back to speech so the user can verbally communcate with the AI assistant. This project was developed using Python, Django, LlamaIndex, HTML, CSS, and JavaScript. ' 
+        description: 'Project for Miami University that utilizes a large language model and retrieval augmented generation (RAG) to create a tour guide that can answer questions about specific data including stats about Miami University\'s college of engineering, important locations, and department information. This application converts speech to text and text back to speech so the user can verbally communcate with the AI assistant. This project was developed using Python, Django, LlamaIndex, HTML, CSS, and JavaScript. ' 
     },
     { 
         id: 6, 
@@ -254,7 +255,7 @@ export const projects: Project[] = [
         image: stocksite, 
         link: 'https://ceclnx01.cec.miamioh.edu/~spearsb2/Stock_Site/cse383_final/home.html',
         description: 'Web application that pulls stock data from polygon.io API to display stock ticker data that the user has selected. The user\'s viewed stock history is stored so it can be easily referenced by date. This project was developed for a class project. Developed using HTML, CSS, BootStrap, JavaScript, SQLite, and PHP.  ' 
-    }
+    },
 ];
 
 export const educations: Education[] = [
@@ -264,5 +265,5 @@ export const educations: Education[] = [
         major: "Co-Major in Entrepreneurship",
         expectedGraduation: "2025",
         logo: miamiUniversity
-    }
+    },
 ];
