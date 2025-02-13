@@ -125,6 +125,7 @@ export default function AlternateTimeline() {
             >
               <h3 className="vertical-timeline-element-title">{exp.title}</h3>
               <h4 className="vertical-timeline-element-subtitle">{exp.company}</h4>
+              <h4 className="vertical-timeline-element-subtitle">{exp.location}</h4>
               <ul>
                 {exp.points.map((point, idx) => (
                   <li key={idx}>{point}</li>
