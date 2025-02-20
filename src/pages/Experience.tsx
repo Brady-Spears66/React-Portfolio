@@ -15,6 +15,12 @@ export default function AlternateTimeline() {
 
   const timelineClassName = theme.palette.mode === 'dark' ? 'dark-timeline' : 'light-timeline';
 
+// Safe HTML rendering component
+// @ts-ignore
+const HTMLContent = ({ content }) => {
+  return <span dangerouslySetInnerHTML={{ __html: content }} />;
+};
+
   return (
     <>
       <style>
@@ -128,7 +134,9 @@ export default function AlternateTimeline() {
               <h4 className="vertical-timeline-element-subtitle">{exp.location}</h4>
               <ul>
                 {exp.points.map((point, idx) => (
-                  <li key={idx}>{point}</li>
+                  <li key={idx}>
+                    <HTMLContent content={point} />
+                  </li>
                 ))}
               </ul>
             </VerticalTimelineElement>

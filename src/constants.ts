@@ -53,12 +53,12 @@ export const experiences: Experience[] = [
         location: "Fariborn, Ohio",
         company: "SRC Inc.",
         points: [
-            "Developed a dynamic and responsive user interface utilizing React, TypeScript, Material UI, and Redux, significantly improving user experience and operational efficiency.",
-            "Integrated Plotly with React to create interactive maps and data visualizations, enhancing the user's ability to interpret complex signal data intuitively.",
-            "Engineered a robust Python server using Quart, providing reliable backend support and seamless API integrations to enhance overall system performance.",
+            "Developed a dynamic and responsive user interface utilizing <strong style='font-size: 1.1em;'>React</strong>, <strong style='font-size: 1.1em;'>TypeScript</strong>, <strong style='font-size: 1.1em;'>Material UI</strong>, and <strong style='font-size: 1.1em;'>Redux</strong>, significantly improving user experience and operational efficiency.",
+            "Integrated <strong style='font-size: 1.1em;'>Plotly</strong> with <strong style='font-size: 1.1em;'>React</strong> to create interactive maps and data visualizations, enhancing the user's ability to interpret complex signal data intuitively.",
+            "Engineered a robust <strong style='font-size: 1.1em;'>Python</strong> server using <strong style='font-size: 1.1em;'>Quart</strong>, providing reliable backend support and seamless API integrations to enhance overall system performance.",
             "Designed and implemented a complex graph data structure to efficiently manage and execute calls to a large language model (LLM), optimizing data processing workflows and improving the accuracy of results.",
-            "Conducted comprehensive analysis and manipulation of 300 unique radar signals by leveraging JSON and Python, contributing to sophisticated signal analysis and advancing the project's data interpretation capabilities.",
-            "Utilized pandas to work with CSV files, performing data cleaning, transformation, and analysis to support various aspects of the project.",
+            "Conducted comprehensive analysis and manipulation of 300 unique radar signals by leveraging <strong style='font-size: 1.1em;'>JSON</strong> and <strong style='font-size: 1.1em;'>Python</strong>, contributing to sophisticated signal analysis and advancing the project's data interpretation capabilities.",
+            "Utilized <strong style='font-size: 1.1em;'>pandas</strong> to work with CSV files, performing data cleaning, transformation, and analysis to support various aspects of the project.",
             "Created an LLM evaluator framework to test and validate responses from the large language model, ensuring the quality and reliability of outputs.",
             "Utilized prompt engineering techniques to craft precise and effective queries, extracting accurate and relevant results from LLM calls, thereby enhancing the quality and reliability of outputs."
         ],
@@ -70,14 +70,14 @@ export const experiences: Experience[] = [
         location: "Springfield, Ohio",
         company: "Navistar Inc.",
         points: [
-            "Implemented an automated solution using VB configuration files, Windows Batch, and Windows Task Scheduler, ensuring seamless PC reboots and application startup.",
-            "Developed Nintex Workflows on a SharePoint site, automating processes such as requesting replacement PCs from IT and updating the Controls issues list.",
+            "Implemented an automated solution using <strong style='font-size: 1.1em;'>VB</strong> configuration files, <strong style='font-size: 1.1em;'>Windows Batch</strong>, and <strong style='font-size: 1.1em;'>Windows Task Scheduler</strong>, ensuring seamless PC reboots and application startup.",
+            "Developed <strong style='font-size: 1.1em;'>Nintex Workflows</strong> on a <strong style='font-size: 1.1em;'>SharePoint</strong> site, automating processes such as requesting replacement PCs from IT and updating the Controls issues list.",
             "Established a test server and database for managing content on networked monitors supporting digital signage, enhancing control and visibility.",
-            "Designed an interactive Visio diagram depicting the intricate interactions among devices and systems within a specific department.",
-            "Utilized the company's Tortoise repository, promoting version control and providing a reference point for colleagues to access and review past work.",
-            "Implemented various functions to eliminate inconsistencies in SQL tables, significantly reducing unique values and enhancing data integrity.",
-            "Completed a 2-day Power BI training session, gaining expertise in manipulating datatables and creating interactive visuals with diverse filtering capabilities.",
-            "Initiated a SharePoint Project to document the internship experience, linking it to the Controls SharePoint site for efficient task management and file storage.",
+            "Designed an interactive <strong style='font-size: 1.1em;'>Visio</strong> diagram depicting the intricate interactions among devices and systems within a specific department.",
+            "Utilized the company's <strong style='font-size: 1.1em;'>Tortoise</strong> repository, promoting version control and providing a reference point for colleagues to access and review past work.",
+            "Implemented various functions to eliminate inconsistencies in <strong style='font-size: 1.1em;'>SQL</strong> tables, significantly reducing unique values and enhancing data integrity.",
+            "Completed a 2-day <strong style='font-size: 1.1em;'>Power BI</strong> training session, gaining expertise in manipulating datatables and creating interactive visuals with diverse filtering capabilities.",
+            "Initiated a <strong style='font-size: 1.1em;'>SharePoint</strong> Project to document the internship experience, linking it to the Controls <strong style='font-size: 1.1em;'>SharePoint</strong> site for efficient task management and file storage.",
             "Completed a one-day training on low voltage safety, earning certification for working with voltages ranging from 60 to 600 volts, ensuring adherence to proper safety protocols."
         ],
         logo: navistarLogo
@@ -88,17 +88,17 @@ export const experiences: Experience[] = [
         location: "South Charleston, Ohio",
         company: "Southeastern Local Schools",
         points: [
-            "Spearheaded a comprehensive update, successfully upgrading all PCs to Windows 10 district-wide, ensuring enhanced security and performance.",
+            "Spearheaded a comprehensive update, successfully upgrading all PCs to <strong style='font-size: 1.1em;'>Windows 10</strong> district-wide, ensuring enhanced security and performance.",
             "Implemented a meticulous inventory system for Chromebooks, creating a detailed spreadsheet capturing crucial details such as model, serial number, MAC address, and device status, streamlining tracking and management processes.",
             "Specialized in diagnosing and repairing a variety of devices, including PCs, Chromebooks, and projectors. Conducted tasks such as cleaning vents, screen replacement, battery replacement, keyboard key replacement, and software updates.",
-            "Acquired proficiency in creating custom Ethernet cables, utilizing a crimper to cut cables to specific lengths. Mastered the cable order sequence and employed a tester to ensure the functionality of all cables.",
+            "Acquired proficiency in creating custom Ethernet cables        , utilizing a crimper to cut cables to specific lengths. Mastered the cable order sequence and employed a tester to ensure the functionality of all cables.",
             "Enhanced the efficiency of the server room by replacing outdated patch cables with custom-length ones, minimizing clutter and reducing cable waste.",
-            "Leveraged Windows Task Manager to monitor and optimize CPU, GPU, and memory status on various devices, ensuring optimal performance across the district."
+            "Leveraged <strong style='font-size: 1.1em;'>Windows Task Manager</strong> to monitor and optimize CPU, GPU, and memory status on various devices, ensuring optimal performance across the district."
         ],
         logo: southeasternLogo
     },
-    
 ]
+
 
 // Categorizing technologies
 export const languages: Technology[] = [
