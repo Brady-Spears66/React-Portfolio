@@ -3,6 +3,7 @@
 export type Experience = {
     date : string;
     title : string;
+    location: string;
     company : string;
     points : string[];
     logo: string;

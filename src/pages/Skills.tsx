@@ -1,9 +1,10 @@
-import { Stack, Typography, useTheme, Button } from "@mui/material";
+import { Stack, Typography, useTheme, Button, Box } from "@mui/material";
 import Grid from '@mui/material/Grid2';
 import React, { useState } from 'react';
 import { languages, librariesFrameworks, tools} from "../constants";
 import { BallCanvas } from "../components/canvas";
 import { Technology } from "../types";
+import SwipeLeftIcon from '@mui/icons-material/SwipeLeft';
 
 // @ts-ignore
 const TechItem = React.memo(({ technology }) => {
@@ -101,18 +102,22 @@ export function Skills() {
                         },
                         '&:focus-visible': {
                             outline: 'none',
-        }
+                        },
                     }}
                    >
                        {title}
                    </Button>
                ))}
-           </Stack>
-           
+           </Stack>   
+           <Stack alignItems={'center'}>
+            <SwipeLeftIcon sx={{fontSize: "3rem"}}/>
+            
+           </Stack> 
            {renderTechSection(
                // @ts-ignore
                categories[selectedCategory].data
            )}
        </Stack>
+       
    );
 }
