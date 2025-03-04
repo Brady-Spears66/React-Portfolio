@@ -235,6 +235,7 @@ export const projects: Project[] = [
         title: 'NFL Power Rankings',
         category: 'Mobile Apps',
         image: nfl,
+        videoUrl: 'https://youtu.be/pf7Ap2d3fBc',
         description: 'A mobile app that displays the NFL power rankings from the 2022 season. \n\nThis app was developed using .NET MAUI with XAML to allow for multi-platform capabilities' 
     },
     { 

@@ -20,7 +20,8 @@ export type Project = {
     id: number;
     title: string;
     category: string;
-    image: string;
+    image?: string;
+    videoUrl?: string;
     link?: string;
     description: string;
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactPlayer from 'react-player';
 import { Card, CardContent, CardMedia, Typography, Grid, Button, Dialog, DialogTitle, DialogContent, DialogActions, Stack } from '@mui/material';
 import { projects } from '../constants';
 import { Project } from '../types';
@@ -74,10 +75,11 @@ function Projects() {
                                 '&:hover': { transform: 'scale(1.05)' } 
                             }}
                         >
+                            {/* In the grid, always prefer image if available */}
                             <CardMedia 
                                 component="img"
                                 height="180"
-                                image={project.image}
+                                image={project.image || project.videoUrl}
                                 alt={project.title}
                                 onClick={() => handleOpenDialog(project)}
                                 sx={{ cursor: 'pointer' }}
@@ -96,7 +98,21 @@ function Projects() {
                     <>
                         <DialogTitle>{selectedProject.title}</DialogTitle>
                         <DialogContent>
-                            <img src={selectedProject.image} alt={selectedProject.title} style={{ width: '100%', borderRadius: 8, marginBottom: 10 }} />
+                            {/* In the dialog, prefer video if available */}
+                            {selectedProject.videoUrl ? (
+                                <ReactPlayer 
+                                    url={selectedProject.videoUrl}
+                                    controls
+                                    width="100%"
+                                    style={{ marginBottom: 10 }}
+                                />
+                            ) : (
+                                <img 
+                                    src={selectedProject.image} 
+                                    alt={selectedProject.title} 
+                                    style={{ width: '100%', borderRadius: 8, marginBottom: 10 }} 
+                                />
+                            )}
                             <Typography variant="body1">{selectedProject.description}</Typography>
                         </DialogContent>
                         <DialogActions>
@@ -117,14 +133,16 @@ function Projects() {
                                 </Button>
                             )}
                             <Button 
-                            onClick={handleCloseDialog} 
-                            color="primary"
-                            sx={{
-                                '&:hover': {
-                                    color: "rgb(25, 190, 207)"
-                                }
-                            }}
-                            >Close</Button>
+                                onClick={handleCloseDialog} 
+                                color="primary"
+                                sx={{
+                                    '&:hover': {
+                                        color: "rgb(25, 190, 207)"
+                                    }
+                                }}
+                            >
+                                Close
+                            </Button>
                         </DialogActions>
                     </>
                 )}
