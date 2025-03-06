@@ -3,6 +3,7 @@ import bootstrap from './assets/tech/bootstrap.png';
 import csharp from './assets/tech/csharp.png';
 import cpp from './assets/tech/cpp.png';
 import css from './assets/tech/css.png';
+import eclipse from './assets/tech/eclipse.png';
 import firebase from './assets/tech/firebase.png';
 import flask from './assets/tech/flask.svg';
 import git from './assets/tech/git.png';
@@ -22,6 +23,8 @@ import reactjs from './assets/tech/reactjs.png';
 import redux from './assets/tech/redux.png';
 import threejs from './assets/tech/threejs.svg';
 import typescript from './assets/tech/typescript.png';
+import visualstudio from './assets/tech/visualstudio.png';
+import vscode from './assets/tech/vscode.png';
 import vmware from './assets/tech/vmware.png';
 import winscp from './assets/tech/winscp.png';
 import xaml from './assets/tech/xaml.png'
@@ -189,6 +192,11 @@ export const librariesFrameworks: Technology[] = [
 
 export const tools: Technology[] = [
     {
+        name: "Eclipse",
+        icon: eclipse,
+
+    },
+    {
         name: "Git",
         icon: git,
     },
@@ -203,6 +211,16 @@ export const tools: Technology[] = [
     {
         name: "PuTTy",
         icon: putty,
+    },
+    {
+        name: "Visual Studio",
+        icon: visualstudio,
+
+    },
+    {
+        name: "Visual Studio Code",
+        icon: vscode,
+
     },
     {
         name: "VMWare",
