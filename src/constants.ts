@@ -74,13 +74,13 @@ export const experiences: Experience[] = [
         company: "Navistar Inc.",
         points: [
             "Implemented an automated solution using <strong style='font-size: 1.1em;'>VB</strong> configuration files, <strong style='font-size: 1.1em;'>Windows Batch</strong>, and <strong style='font-size: 1.1em;'>Windows Task Scheduler</strong>, ensuring seamless PC reboots and application startup.",
-            "Developed <strong style='font-size: 1.1em;'>Nintex Workflows</strong> on a <strong style='font-size: 1.1em;'>SharePoint</strong> site, automating processes such as requesting replacement PCs from IT and updating the Controls issues list.",
+            "Developed <strong style='font-size: 1.1em;'>Nintex Workflows</strong> on a SharePoint site, automating processes such as requesting replacement PCs from IT and updating the Controls issues list.",
             "Established a test server and database for managing content on networked monitors supporting digital signage, enhancing control and visibility.",
             "Designed an interactive <strong style='font-size: 1.1em;'>Visio</strong> diagram depicting the intricate interactions among devices and systems within a specific department.",
             "Utilized the company's <strong style='font-size: 1.1em;'>Tortoise</strong> repository, promoting version control and providing a reference point for colleagues to access and review past work.",
             "Implemented various functions to eliminate inconsistencies in <strong style='font-size: 1.1em;'>SQL</strong> tables, significantly reducing unique values and enhancing data integrity.",
             "Completed a 2-day <strong style='font-size: 1.1em;'>Power BI</strong> training session, gaining expertise in manipulating datatables and creating interactive visuals with diverse filtering capabilities.",
-            "Initiated a <strong style='font-size: 1.1em;'>SharePoint</strong> Project to document the internship experience, linking it to the Controls <strong style='font-size: 1.1em;'>SharePoint</strong> site for efficient task management and file storage.",
+            "Initiated a <strong style='font-size: 1.1em;'>SharePoint</strong> Project to document the internship experience, linking it to the Controls SharePoint site for efficient task management and file storage.",
             "Completed a one-day training on low voltage safety, earning certification for working with voltages ranging from 60 to 600 volts, ensuring adherence to proper safety protocols."
         ],
         logo: navistarLogo

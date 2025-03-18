@@ -1,11 +1,11 @@
-import { Box, Container, Paper, Typography, useTheme } from '@mui/material';
+import { Box, Container, Paper, Stack, Typography, useTheme } from '@mui/material';
 import { ComputersCanvas } from '../components/canvas';
 
 function Home() {
     const theme = useTheme();
 
     return (
-        <>
+        <Container sx={{ alignContent: 'center', width: '90vw', m: 0, p: 0}}>
             <Box sx={{ 
                 width: '100%',
                 height: '60vh',
@@ -13,20 +13,31 @@ function Home() {
                 flexDirection: 'column',
                 position: 'relative',
             }}>
-                <Container sx={{ 
+                <Stack spacing={1} sx={{ 
                     textAlign: 'center', 
                     mt: 2,
                     }}>
-                    <Typography variant="h2" component="h1" gutterBottom>
+                    <Typography 
+                        variant="h2"
+                        component="h1" 
+                        sx={{
+                            fontSize: {
+                                xs: '2.5rem', // 2.5rem for extra small screens
+                                sm: '3rem',   // 3rem for small screens
+                                md: '3.5rem', // 3.5rem for medium screens
+                                lg: '4rem',   // 4rem for large screens
+                            }
+                        }}
+                    >
                         Welcome to my portfolio
                     </Typography>
-                    <Typography variant="h4" component="h2" gutterBottom>
+                    <Typography variant="h5" component="h2" gutterBottom>
                         My name is Brady Spears
                     </Typography>
-                    <Typography variant="h5" component="h2" gutterBottom>
+                    <Typography variant="body1" component="h2" gutterBottom>
                         I am a software engineer with a passion for web development and much more!
                     </Typography>
-                </Container>
+                </Stack>
                 <ComputersCanvas/>
             </Box>
             
@@ -53,7 +64,7 @@ function Home() {
                     </Typography>
                 </Box>
             </Container>
-        </>
+        </Container>
     );
 }
 
