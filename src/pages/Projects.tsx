@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
 import ReactPlayer from 'react-player';
 import { Card, CardContent, CardMedia, Typography, Grid, Button, Dialog, DialogTitle, DialogContent, DialogActions, Stack } from '@mui/material';
 import { projects } from '../constants';
 import { Project } from '../types';
 import { useTheme } from '@mui/material/styles';
+import { useAppDispatch, useAppSelector } from '../state/Hooks';
+import { setSelectedCategory, setOpenDialog, setSelectedProject} from "../state/theme/ProjectsSlice";
+
 
 function Projects() {
     const theme = useTheme();
-    const [selectedCategory, setSelectedCategory] = useState('All');
-    const [openDialog, setOpenDialog] = useState(false);
-    const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+    const selectedCategory = useAppSelector(state => state.projects.selectedCategory);
+    const openDialog = useAppSelector(state => state.projects.openDialog);
+    const selectedProject = useAppSelector(state => state.projects.selectedProject);
+    const dispatch = useAppDispatch();
 
     const categories = ['All', 'AI', "Mobile Apps", "Web Apps"];
 
@@ -18,13 +21,13 @@ function Projects() {
         : projects.filter(project => project.category === selectedCategory);
 
     const handleOpenDialog = (project: Project) => {
-        setSelectedProject(project);
-        setOpenDialog(true);
+        dispatch(setSelectedProject(project));
+        dispatch(setOpenDialog(true));
     };
 
     const handleCloseDialog = () => {
-        setOpenDialog(false);
-        setSelectedProject(null);
+        dispatch(setOpenDialog(false));
+        dispatch(setSelectedProject(null));
     };
 
     return (
@@ -39,7 +42,7 @@ function Projects() {
                 {categories.map((category) => (
                     <Button
                         key={category}
-                        onClick={() => setSelectedCategory(category)}
+                        onClick={() => dispatch(setSelectedCategory(category))}
                         sx={{
                             textTransform: 'none',
                             color: selectedCategory === category ? theme.palette.secondary.main : theme.palette.text.primary,
