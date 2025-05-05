@@ -33,7 +33,7 @@ import xaml from './assets/tech/xaml.png'
 import nfl from './assets/projects/NFL.png';
 import recipedia from './assets/projects/recipedia.png';
 import stocksite from './assets/projects/stocksite.jpeg';
-import tourguide from './assets/projects/tourguide.jpeg';
+import tourguide from './assets/projects/ai-assistant.png';
 import radarVisualizer from './assets/projects/radarVizualizer.jpeg';
 import llmEvaluator from './assets/projects/llmEvaluator.jpeg';
 
@@ -239,14 +239,14 @@ export const projects: Project[] = [
         title: 'AI Tour Guide', 
         category: 'AI', 
         image: tourguide,
-        description: 'Project for Miami University that utilizes a large language model and retrieval augmented generation (RAG) to create a tour guide that can answer questions about specific data including stats about Miami University\'s college of engineering, important locations, and department information. This application converts speech to text and text back to speech so the user can verbally communcate with the AI assistant. This project was developed using Python, Django, LlamaIndex, HTML, CSS, and JavaScript. ' 
+        description: `Developed an AI-powered tour guide application deployed on an Android tablet, enabling users to verbally ask questions about Miami University’s College of Engineering. The app uses Large Language Models (LLMs) with Retrieval Augmented Generation (RAG) to deliver real-time answers based on custom data sources such as department stats, locations, and academic info.\n\nThe application supports speech-to-text and text-to-speech entirely locally on the tablet, ensuring fast, private, and reliable voice interaction.\n\nPowered by Python, Django, LlamaIndex, HTML, CSS, and JavaScript, the backend includes a robust Django admin interface that allows administrators to upload PDFs, CSVs, JSON files, and webpage URLs directly into the local database. These files are immediately processed and indexed for use in the RAG pipeline—supporting real-time updates without system downtime.`
     },
     { 
         id: 6, 
         title: 'LLM Response Evaluator', 
         category: 'AI', 
         image: llmEvaluator, 
-        description: 'A framework designed to evaluate and validate responses from large language models (LLMs), ensuring accuracy and reliability of AI-generated content. Developed using Python, this application leverages prompt engineering techniques and a structured evaluation pipeline to test LLM responses systematically. It features advanced data processing capabilities, utilizing graph-based execution models to optimize query performance and response validation.' 
+        description: `A framework designed to evaluate and validate responses from large language models (LLMs), ensuring accuracy and reliability of AI-generated content.\n\nDeveloped using Python, this application leverages prompt engineering techniques and a structured evaluation pipeline to test LLM responses systematically.\n\nIt features advanced data processing capabilities, utilizing graph-based execution models to optimize query performance and response validation.`
     },
     { 
         id: 4, 
@@ -254,14 +254,14 @@ export const projects: Project[] = [
         category: 'Mobile Apps',
         image: nfl,
         videoUrl: 'https://youtu.be/pf7Ap2d3fBc',
-        description: 'A mobile app that displays the NFL power rankings from the 2022 season. \n\nThis app was developed using .NET MAUI with XAML to allow for multi-platform capabilities' 
+        description: `A mobile app that displays the NFL power rankings from the 2022 season.\n\nThis app was developed using .NET MAUI with XAML to allow for multi-platform capabilities.`
     },
     { 
         id: 5, 
         title: 'Radar Signal Visualizer', 
         category: 'AI', 
         image: radarVisualizer, 
-        description: 'An AI-powered web application designed to visualize and analyze radar signal data with intelligent processing workflows. Utilizing React, TypeScript, Material UI, Redux, and Plotly for dynamic front-end visualization, the backend is built with Python and Quart. LangGraph was implemented to manage complex execution flows for analyzing over 300 unique radar signals, optimizing signal interpretation and enhancing analytical accuracy.' 
+        description: `An AI-powered web application designed to visualize and analyze radar signal data with intelligent processing workflows.\n\nUtilizing React, TypeScript, Material UI, Redux, and Plotly for dynamic front-end visualization, the backend is built with Python and Quart.\n\nLangGraph was implemented to manage complex execution flows for analyzing over 300 unique radar signals, optimizing signal interpretation and enhancing analytical accuracy.`
     },
     { 
         id: 1, 
@@ -269,7 +269,7 @@ export const projects: Project[] = [
         category: 'Web Apps', 
         image: recipedia, 
         link: 'https://recipedia-cc9fb.web.app/',
-        description: 'Web application that provides recipe data and keeps track of a user\'s virtual pantry. This project was designed with a class team utilizing agile project development. Developed using HTML, CSS, JavaScript, and the Spoonacular API' 
+        description: `Web application that provides recipe data and keeps track of a user's virtual pantry.\n\nThis project was designed with a class team utilizing agile project development.\n\nDeveloped using HTML, CSS, JavaScript, and the Spoonacular API.`
     },
     { 
         id: 2, 
@@ -277,9 +277,10 @@ export const projects: Project[] = [
         category: 'Web Apps', 
         image: stocksite, 
         link: 'https://ceclnx01.cec.miamioh.edu/~spearsb2/Stock_Site/cse383_final/home.html',
-        description: 'Web application that pulls stock data from polygon.io API to display stock ticker data that the user has selected. The user\'s viewed stock history is stored so it can be easily referenced by date. This project was developed for a class project. Developed using HTML, CSS, BootStrap, JavaScript, SQLite, and PHP.  ' 
+        description: `Web application that pulls stock data from polygon.io API to display stock ticker data that the user has selected.\n\nThe user's viewed stock history is stored so it can be easily referenced by date. This project was developed for a class project.\n\nDeveloped using HTML, CSS, BootStrap, JavaScript, SQLite, and PHP.`
     },
 ];
+
 
 export const educations: Education[] = [
     {

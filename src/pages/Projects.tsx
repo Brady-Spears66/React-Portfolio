@@ -113,7 +113,12 @@ function Projects() {
                                     style={{ width: '100%', borderRadius: 8, marginBottom: 10 }} 
                                 />
                             )}
-                            <Typography variant="body1">{selectedProject.description}</Typography>
+                            {selectedProject.description.split('\n\n').map((paragraph, index) => (
+                                <Typography key={index} variant="body1" paragraph>
+                                    {paragraph}
+                                </Typography>
+                            ))}
+
                         </DialogContent>
                         <DialogActions>
                             {/* Conditionally render link button if it exists */}
