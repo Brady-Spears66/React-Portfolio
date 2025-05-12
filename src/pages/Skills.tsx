@@ -1,54 +1,19 @@
-import { Stack, Typography, useTheme, Button, Box } from "@mui/material";
+import { Stack, useTheme, Button, Box } from "@mui/material";
 import Grid from '@mui/material/Grid2';
-import React, { useState } from 'react';
 import { languages, librariesFrameworks, tools} from "../constants";
 import { BallCanvas } from "../components/canvas";
-import { Technology } from "../types";
+import { Category, Technology } from "../types";
 import SwipeLeftIcon from '@mui/icons-material/SwipeLeft';
-
-// @ts-ignore
-const TechItem = React.memo(({ technology }) => {
-   const [isHovered, setIsHovered] = useState(false);
-
-   return (
-       <Grid 
-           size={{xs: 4,  sm: 4, md: 3,  lg: 2}} 
-           justifyContent="center" 
-           alignItems="center" 
-           sx={{ 
-               position: 'relative', 
-               textAlign: 'center', 
-               height: '25vh',
-               display: 'flex', 
-               flexDirection: 'column', 
-               alignItems: 'center' 
-           }}
-           onMouseEnter={() => setIsHovered(true)}
-           onMouseLeave={() => setIsHovered(false)}
-       >
-           <div className='w-35 h-35'>
-               <BallCanvas icon={technology.icon} />
-           </div>
-           {isHovered && (
-               <Typography 
-                   variant="body1" 
-                   sx={{
-                       mt: 1,
-                       opacity: isHovered ? 1 : 0,
-                       transition: 'opacity 0.3s ease-in-out',
-                   }}
-               >
-                   {technology.name}
-               </Typography>
-           )}
-       </Grid>
-   );
-});
+import { useAppDispatch, useAppSelector } from "../state/Hooks";
+import { setSelectedCategory } from "../state/theme/SkillsSlice";
+import TechItem from "../components/TechItem";
 
 export function Skills() {
    const theme = useTheme();
-   const [selectedCategory, setSelectedCategory] = useState('languages');
-
+   // const [selectedCategory, setSelectedCategory] = useState('languages');
+   const selectedCategory: Category = useAppSelector(state => state.skills.selectedCategory);
+   const dispatch = useAppDispatch();
+   
    const categories = {
        languages: { title: 'Languages', data: languages },
        frameworks: { title: 'Libraries & Frameworks', data: librariesFrameworks },
@@ -80,7 +45,7 @@ export function Skills() {
                {Object.entries(categories).map(([key, { title }]) => (
                    <Button
                        key={key}
-                       onClick={() => setSelectedCategory(key)}
+                       onClick={() => dispatch(setSelectedCategory(key as Category))}
                        sx={{
                         textTransform: 'none',
                         color: selectedCategory === key ? theme.palette.secondary.main : theme.palette.text.primary,

@@ -34,3 +34,5 @@ export type Education = {
     expectedGraduation: string;
     logo: string;
 }
+
+export type Category = 'languages' | 'frameworks' | 'tools';
