@@ -1,9 +1,9 @@
 // src/components/TechItem.tsx
-import React, { useState } from 'react';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import { BallCanvas } from './canvas';
-import { Technology } from '../types';
+import React, { useState } from "react";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import { BallCanvas } from "./canvas";
+import { Technology } from "../types";
 
 type Props = {
   technology: Technology;
@@ -22,12 +22,12 @@ const TechItem: React.FC<Props> = ({ technology }) => {
       justifyContent="center"
       alignItems="center"
       sx={{
-        position: 'relative',
-        textAlign: 'center',
-        height: '25vh',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
+        position: "relative",
+        textAlign: "center",
+        height: "25vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -41,7 +41,7 @@ const TechItem: React.FC<Props> = ({ technology }) => {
           sx={{
             mt: 1,
             opacity: 1,
-            transition: 'opacity 0.3s ease-in-out',
+            transition: "opacity 0.3s ease-in-out",
           }}
         >
           {technology.name}
