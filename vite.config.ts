@@ -7,4 +7,7 @@ export default defineConfig({
   optimizeDeps: { // 
     include: ['@mui/material/Unstable_Grid2'],
   },
+  build: {
+    chunkSizeWarningLimit: 1600,
+  }
 })

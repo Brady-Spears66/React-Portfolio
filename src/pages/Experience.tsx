@@ -1,25 +1,27 @@
-import * as React from 'react';
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
-import { experiences } from '../constants';
-import { useTheme } from '@mui/material';
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+import { experiences } from "../constants";
+import { useTheme } from "@mui/material";
 
 export default function AlternateTimeline() {
   const theme = useTheme();
-  
-  const backgroundColor = theme.palette.mode === 'dark'
-    ? 'rgba(255, 255, 255, 0.06)' 
-    : 'grey';
-    
-  const textColor = 'white';
 
-  const timelineClassName = theme.palette.mode === 'dark' ? 'dark-timeline' : 'light-timeline';
+  const backgroundColor =
+    theme.palette.mode === "dark" ? "rgba(255, 255, 255, 0.06)" : "grey";
 
-// Safe HTML rendering component
-// @ts-ignore
-const HTMLContent = ({ content }) => {
-  return <span dangerouslySetInnerHTML={{ __html: content }} />;
-};
+  const textColor = "white";
+
+  const timelineClassName =
+    theme.palette.mode === "dark" ? "dark-timeline" : "light-timeline";
+
+  // Safe HTML rendering component
+  // @ts-ignore
+  const HTMLContent = ({ content }) => {
+    return <span dangerouslySetInnerHTML={{ __html: content }} />;
+  };
 
   return (
     <>
@@ -117,21 +119,25 @@ const HTMLContent = ({ content }) => {
               date={exp.date}
               icon={<img src={exp.logo} alt={exp.company} />}
               iconStyle={{
-                background: 'white',
-                overflow: 'hidden'
+                background: "white",
+                overflow: "hidden",
               }}
-              contentStyle={{ 
+              contentStyle={{
                 color: textColor,
-                background: backgroundColor
+                background: backgroundColor,
               }}
               contentArrowStyle={{
-                borderRight: `7px solid ${backgroundColor}`
+                borderRight: `7px solid ${backgroundColor}`,
               }}
               dateClassName="vertical-timeline-element-date"
             >
               <h3 className="vertical-timeline-element-title">{exp.title}</h3>
-              <h4 className="vertical-timeline-element-subtitle">{exp.company}</h4>
-              <h4 className="vertical-timeline-element-subtitle">{exp.location}</h4>
+              <h4 className="vertical-timeline-element-subtitle">
+                {exp.company}
+              </h4>
+              <h4 className="vertical-timeline-element-subtitle">
+                {exp.location}
+              </h4>
               <ul>
                 {exp.points.map((point, idx) => (
                   <li key={idx}>

@@ -1,8 +1,14 @@
-import React, { Suspense, useRef } from "react";
+import { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Decal, Float, OrbitControls, Preload, useTexture } from "@react-three/drei";
+import {
+  Decal,
+  Float,
+  OrbitControls,
+  Preload,
+  useTexture,
+} from "@react-three/drei";
 
-import './styles.css';
+import "./styles.css";
 
 import CanvasLoader from "../Loader";
 
@@ -21,12 +27,12 @@ const Ball = (props) => {
   });
 
   return (
-    <Float speed={10} floatingRange={[0, .6]} floatIntensity={2}>
-      <mesh 
+    <Float speed={10} floatingRange={[0, 0.6]} floatIntensity={2}>
+      <mesh
         // @ts-ignore
-        ref={meshRef} 
-        castShadow 
-        receiveShadow 
+        ref={meshRef}
+        castShadow
+        receiveShadow
         scale={2.75}
       >
         <OrbitControls
