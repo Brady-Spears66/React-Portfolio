@@ -48,6 +48,7 @@ const LightTheme: ThemeOptions = createTheme({
 });
 
 function App() {
+  // @ts-ignore
   const mode = useAppSelector((state) => state.theme.mode);
   const theme = mode === "light" ? LightTheme : DarkTheme;
   const loc = useLocation().pathname.replace(/^\/+/, "") || "Home";

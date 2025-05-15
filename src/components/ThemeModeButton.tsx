@@ -8,6 +8,7 @@ import { setMode } from "../state/theme/ThemeSlice";
  * A component that allows the user to toggle between light and dark mode
  */
 export default function ThemeModeButton() {
+  // @ts-ignore
   const mode = useAppSelector((state) => state.theme.mode);
   const dispatch = useAppDispatch();
 

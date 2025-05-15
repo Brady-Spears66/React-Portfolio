@@ -1,5 +1,6 @@
 import projectsReducer from "./theme/ProjectsSlice";
 import skillsReducer from "./theme/SkillsSlice";
+import themeReducer from "./theme/ThemeSlice";
 import { configureStore } from "@reduxjs/toolkit";
 
 export const store = configureStore({
