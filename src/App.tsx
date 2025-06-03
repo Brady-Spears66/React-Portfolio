@@ -68,7 +68,7 @@ function App() {
             flexDirection: "column",
             minHeight: "100vh",
             width: "100%",
-            overflow: "hidden",
+            overflowX: "hidden",
           }}
         >
           <Navbar />

@@ -5,7 +5,7 @@ function Home() {
   const theme = useTheme();
 
   return (
-    <Container sx={{ alignContent: "center", width: "90vw", m: 0, p: 0 }}>
+    <Box sx={{ width: "100%", overflowX: "hidden" }}>
       <Box
         sx={{
           width: "100%",
@@ -76,7 +76,7 @@ function Home() {
           </Typography>
         </Box>
       </Container>
-    </Container>
+    </Box>
   );
 }
 
