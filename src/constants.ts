@@ -235,6 +235,7 @@ export const projects: Project[] = [
     title: "AI Tour Guide",
     category: "AI",
     image: tourguide,
+    videoUrl: "https://www.youtube.com/watch?v=hNxQ2DMKSy4",
     description: `Developed an AI-powered tour guide application deployed on an Android tablet, enabling users to verbally ask questions about Miami University’s College of Engineering. The app uses Large Language Models (LLMs) with Retrieval Augmented Generation (RAG) to deliver real-time answers based on custom data sources such as department stats, locations, and academic info.\n\nThe application supports speech-to-text and text-to-speech entirely locally on the tablet, ensuring fast, private, and reliable voice interaction.\n\nPowered by Python, Django, LlamaIndex, HTML, CSS, and JavaScript, the backend includes a robust Django admin interface that allows administrators to upload PDFs, CSVs, JSON files, and webpage URLs directly into the local database. These files are immediately processed and indexed for use in the RAG pipeline—supporting real-time updates without system downtime.`,
   },
   {
