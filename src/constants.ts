@@ -36,6 +36,7 @@ import stocksite from "./assets/projects/stocksite.jpeg";
 import tourguide from "./assets/projects/ai-assistant.png";
 import radarVisualizer from "./assets/projects/radarVizualizer.jpeg";
 import llmEvaluator from "./assets/projects/llmEvaluator.jpeg";
+import spotify from "./assets/projects/Spotify_icon.svg";
 
 // Importing Education logos
 import miamiUniversity from "./assets/education/miamiUniversity.png";
@@ -275,6 +276,14 @@ export const projects: Project[] = [
     image: stocksite,
     link: "https://ceclnx01.cec.miamioh.edu/~spearsb2/Stock_Site/cse383_final/home.html",
     description: `Web application that pulls stock data from polygon.io API to display stock ticker data that the user has selected.\n\nThe user's viewed stock history is stored so it can be easily referenced by date. This project was developed for a class project.\n\nDeveloped using HTML, CSS, BootStrap, JavaScript, SQLite, and PHP.`,
+  },
+  {
+    id: 7,
+    title: "Spotify Statistics",
+    category: "Web Apps",
+    image: spotify,
+    videoUrl: "https://youtu.be/WJEyNmuQaJY",
+    description: `Full-stack web application that connects to the Spotify Web API to retrieve and display rich metadata for artists, albums, and tracks based on user authentication.\n\nThe app features dynamic routing, interactive UI components, and conditional rendering based on API responses. Users can explore artist profiles, album details, and individual track data including duration, genre, popularity, and more. Spotify OAuth 2.0 flow is used to securely authenticate users and provide scoped access to user data.\n\nFrontend built with React, TypeScript, and Material UI for a responsive and visually cohesive interface. Backend developed with Flask to act as a proxy server for Spotify API requests, handling token management and securing client secrets.`,
   },
 ];
 
