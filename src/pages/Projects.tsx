@@ -50,6 +50,12 @@ function Projects() {
     dispatch(setSelectedProject(null));
   };
 
+  // Safe HTML rendering component
+  // @ts-ignore
+  const HTMLContent = ({ content }) => {
+    return <span dangerouslySetInnerHTML={{ __html: content }} />;
+  };
+
   return (
     <div style={{ padding: "2rem", textAlign: "center" }}>
       {/* Category Buttons */}
@@ -148,7 +154,7 @@ function Projects() {
                 .split("\n\n")
                 .map((paragraph, index) => (
                   <Typography key={index} variant="body1" paragraph>
-                    {paragraph}
+                    <HTMLContent content={paragraph} />
                   </Typography>
                 ))}
             </DialogContent>
