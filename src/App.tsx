@@ -18,6 +18,7 @@ import { Skills } from "./pages/Skills";
 import Footer from "./components/Footer";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import logo from "./images/mobile-logo.png";
+import Resume from "./pages/Resume";
 
 // Test comment
 const theme = createTheme({});
@@ -86,6 +87,7 @@ function App() {
               <Route path="/projects" element={<Projects />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/education" element={<Education />} />
+              <Route path="/resume" element={<Resume />} />
             </Routes>
           </Container>
           <Footer />

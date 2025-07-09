@@ -41,6 +41,7 @@ function ResponsiveAppBar() {
     { label: "Skills", path: "/skills" },
     { label: "Projects", path: "/projects" },
     { label: "Education", path: "/education" },
+    { label: "Resume", path: "/resume" },
     { label: "Contact", path: "/contact" },
   ];
 
