@@ -11,9 +11,6 @@ function Contact() {
     message: "",
   });
 
-  const content = "NewLine";
-  const filePath = "../general/MessageCount.txt";
-
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
