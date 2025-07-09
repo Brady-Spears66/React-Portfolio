@@ -50,7 +50,7 @@ export default function Footer() {
         >
           <Typography variant="body1">Brady Spears</Typography>
           <Typography variant="body1">South Charleston, Ohio</Typography>
-          <Typography variant="body1">spearsb2@miamioh.edu</Typography>
+          <Typography variant="body1">spearsy00@gmail.com</Typography>
           <Typography variant="body1">(937) 371-2938</Typography>
 
           <Stack
@@ -81,7 +81,7 @@ export default function Footer() {
               },
               {
                 icon: <EmailIcon />,
-                href: "mailto:spearsb2@miamioh.edu",
+                href: "mailto:spearsy00@gmail.com",
                 label: "email",
               },
             ].map((item) => (
