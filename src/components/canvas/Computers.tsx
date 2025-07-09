@@ -58,7 +58,11 @@ const ComputersCanvas = () => {
 
   return (
     <Canvas
-      style={{ height: "100%", width: "auto" }}
+      style={{
+        height: "100%",
+        width: "auto",
+        pointerEvents: isMobile ? "none" : "auto",
+      }}
       frameloop="demand"
       shadows
       dpr={[1, 2]}
