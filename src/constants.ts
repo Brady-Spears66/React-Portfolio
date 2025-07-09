@@ -21,6 +21,7 @@ import python from "./assets/tech/python.png";
 import quart from "./assets/tech/quart.svg";
 import reactjs from "./assets/tech/reactjs.png";
 import redux from "./assets/tech/redux.png";
+import sonarqube from "./assets/tech/sq.png";
 import threejs from "./assets/tech/threejs.svg";
 import typescript from "./assets/tech/typescript.png";
 import visualstudio from "./assets/tech/visualstudio.png";
@@ -159,6 +160,7 @@ export const librariesFrameworks: Technology[] = [
   {
     name: "Llama Index",
     icon: llamaIndex,
+    hasRoundedCorners: true,
   },
   {
     name: "Plotly",
@@ -210,6 +212,11 @@ export const tools: Technology[] = [
   {
     name: "PuTTy",
     icon: putty,
+  },
+  {
+    name: "SonarQube",
+    icon: sonarqube,
+    hasRoundedCorners: true,
   },
   {
     name: "Visual Studio",

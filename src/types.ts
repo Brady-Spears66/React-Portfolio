@@ -12,6 +12,7 @@ export type Experience = {
 export type Technology = {
   name: string;
   icon: string;
+  hasRoundedCorners?: boolean;
 };
 
 // Declaring a type for projects for the projects page

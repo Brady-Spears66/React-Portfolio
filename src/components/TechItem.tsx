@@ -33,7 +33,10 @@ const TechItem: React.FC<Props> = ({ technology }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="w-35 h-35">
-        <BallCanvas icon={technology.icon} />
+        <BallCanvas
+          icon={technology.icon}
+          hasRoundedCorners={technology.hasRoundedCorners}
+        />
       </div>
       {isHovered && (
         <Typography
