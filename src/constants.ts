@@ -3,19 +3,23 @@ import bootstrap from "./assets/tech/bootstrap.png";
 import csharp from "./assets/tech/csharp.png";
 import cpp from "./assets/tech/cpp.png";
 import css from "./assets/tech/css.png";
+import docker from "./assets/tech/docker.svg";
+import podman from "./assets/tech/podman.png";
 import eclipse from "./assets/tech/eclipse.png";
 import firebase from "./assets/tech/firebase.png";
 import flask from "./assets/tech/flask.svg";
 import git from "./assets/tech/git.png";
 import html from "./assets/tech/html.png";
 import java from "./assets/tech/java.png";
+import javalin from "./assets/tech/javalin.png";
 import javascript from "./assets/tech/javascript.png";
 import langchain from "./assets/tech/langchain.svg";
 import llamaIndex from "./assets/tech/llamaindex.png";
 import linux from "./assets/tech/linux.png";
 import maui from "./assets/tech/maui.png";
+import maven from "./assets/tech/maven.png";
 import mui from "./assets/tech/mui.png";
-import plotly from "./assets/tech/plotly.svg";
+import plotly from "./assets/tech/plotly.png";
 import putty from "./assets/tech/putty.png";
 import python from "./assets/tech/python.png";
 import quart from "./assets/tech/quart.svg";
@@ -152,6 +156,7 @@ export const librariesFrameworks: Technology[] = [
   {
     name: "Quart",
     icon: quart,
+    hasRoundedCorners: true,
   },
   {
     name: "LangChain",
@@ -165,6 +170,7 @@ export const librariesFrameworks: Technology[] = [
   {
     name: "Plotly",
     icon: plotly,
+    hasRoundedCorners: true,
   },
   {
     name: "React JS",
@@ -179,6 +185,14 @@ export const librariesFrameworks: Technology[] = [
     icon: threejs,
   },
   {
+    name: "Apache Maven",
+    icon: maven,
+  },
+  {
+    name: "Javalin",
+    icon: javalin,
+  },
+  {
     name: "Material UI",
     icon: mui,
   },
@@ -189,10 +203,19 @@ export const librariesFrameworks: Technology[] = [
   {
     name: ".NET MAUI",
     icon: maui,
+    hasRoundedCorners: true,
   },
 ];
 
 export const tools: Technology[] = [
+  {
+    name: "Docker",
+    icon: docker,
+  },
+  {
+    name: "Podman",
+    icon: podman,
+  },
   {
     name: "Eclipse",
     icon: eclipse,
