@@ -16,8 +16,10 @@ import javascript from "./assets/tech/javascript.png";
 import langchain from "./assets/tech/langchain.svg";
 import llamaIndex from "./assets/tech/llamaindex.png";
 import linux from "./assets/tech/linux.png";
+import mariadb from "./assets/tech/mariadb.jpeg";
 import maui from "./assets/tech/maui.png";
 import maven from "./assets/tech/maven.png";
+import minio from "./assets/tech/minio.png";
 import mui from "./assets/tech/mui.png";
 import plotly from "./assets/tech/plotly.png";
 import putty from "./assets/tech/putty.png";
@@ -56,6 +58,21 @@ import { Experience, Technology, Project, Education } from "./types";
 
 // Creating a list of experiences
 export const experiences: Experience[] = [
+  {
+    date: "June, 2025 - Present",
+    title: "Software Engineer",
+    location: "Fariborn, Ohio",
+    company: "SRC Inc.",
+    points: [
+      "Developed scalable full-stack applications using <strong style='font-size: 1.1em; color: rgb(25, 190, 207);'>React</strong> with both <strong style='font-size: 1.1em; color: rgb(25, 190, 207);'>Redux</strong> and <strong style='font-size: 1.1em; color: rgb(25, 190, 207);'>Context API</strong> for advanced state management, delivering dynamic and efficient user experiences.",
+      "Built and maintained backend services using <strong style='font-size: 1.1em; color: rgb(25, 190, 207);'>FastAPI</strong>, implementing high-performance RESTful APIs that integrated seamlessly with frontend applications.",
+      "Engineered robust backend components with <strong style='font-size: 1.1em; color: rgb(25, 190, 207);'>Java</strong>, <strong style='font-size: 1.1em; color: rgb(25, 190, 207);'>Maven</strong>, and <strong style='font-size: 1.1em; color: rgb(25, 190, 207);'>Javalin</strong>, supporting modular development and clean architectural patterns.",
+      "Integrated <strong style='font-size: 1.1em; color: rgb(25, 190, 207);'>MariaDB</strong> and <strong style='font-size: 1.1em; color: rgb(25, 190, 207);'>MinIO</strong> into application workflows, optimizing data storage, retrieval, and file-handling processes for improved reliability and performance.",
+      "Authored production-grade <strong style='font-size: 1.1em; color: rgb(25, 190, 207);'>Dockerfiles</strong> to generate container images deployed within <strong style='font-size: 1.1em; color: rgb(25, 190, 207);'>Podman</strong> pods, enabling modular, containerized development environments.",
+      "Improved the development and deployment lifecycle by troubleshooting complex system issues, refining CI/CD workflows, and enhancing overall application efficiency.",
+    ],
+    logo: srcLogo,
+  },
   {
     date: "May, 2024 - August 2024",
     title: "Software Engineer Intern",
@@ -231,6 +248,15 @@ export const tools: Technology[] = [
   {
     name: "Linux",
     icon: linux,
+  },
+  {
+    name: "MariaDB",
+    icon: mariadb,
+    hasRoundedCorners: true,
+  },
+  {
+    name: "MinIO",
+    icon: minio,
   },
   {
     name: "PuTTy",
