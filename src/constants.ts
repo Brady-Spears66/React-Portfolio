@@ -61,7 +61,7 @@ export const experiences: Experience[] = [
   {
     date: "June, 2025 - Present",
     title: "Software Engineer",
-    location: "Fariborn, Ohio",
+    location: "Fairborn, Ohio",
     company: "SRC Inc.",
     points: [
       "Developed scalable full-stack applications using <strong style='font-size: 1.1em; color: rgb(25, 190, 207);'>React</strong> with both <strong style='font-size: 1.1em; color: rgb(25, 190, 207);'>Redux</strong> and <strong style='font-size: 1.1em; color: rgb(25, 190, 207);'>Context API</strong> for advanced state management, delivering dynamic and efficient user experiences.",
@@ -76,7 +76,7 @@ export const experiences: Experience[] = [
   {
     date: "May, 2024 - August 2024",
     title: "Software Engineer Intern",
-    location: "Fariborn, Ohio",
+    location: "Fairborn, Ohio",
     company: "SRC Inc.",
     points: [
       "Developed a dynamic and responsive user interface utilizing <strong style='font-size: 1.1em; color: rgb(25, 190, 207);'>React</strong>, <strong style='font-size: 1.1em; color: rgb(25, 190, 207);'>TypeScript</strong>, <strong style='font-size: 1.1em; color: rgb(25, 190, 207);'>Material UI</strong>, and <strong style='font-size: 1.1em; color: rgb(25, 190, 207);'>Redux</strong>, significantly improving user experience and operational efficiency.",
