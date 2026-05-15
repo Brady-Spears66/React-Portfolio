@@ -74,6 +74,7 @@ function App() {
         >
           <Navbar />
           <Container
+            maxWidth={false}
             sx={{
               mt: 5,
               flex: "1 0 auto", // This makes the container take up available space

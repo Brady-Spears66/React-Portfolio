@@ -14,12 +14,14 @@ import java from "./assets/tech/java.png";
 import javalin from "./assets/tech/javalin.png";
 import javascript from "./assets/tech/javascript.png";
 import langchain from "./assets/tech/langchain.svg";
+import langgraph from "./assets/tech/langgraph.png";
 import llamaIndex from "./assets/tech/llamaindex.png";
 import linux from "./assets/tech/linux.png";
 import mariadb from "./assets/tech/mariadb.jpeg";
 import maui from "./assets/tech/maui.png";
 import maven from "./assets/tech/maven.png";
 import minio from "./assets/tech/minio.png";
+import neo4j from "./assets/tech/neo4j.png";
 import mui from "./assets/tech/mui.png";
 import plotly from "./assets/tech/plotly.png";
 import putty from "./assets/tech/putty.png";
@@ -35,6 +37,7 @@ import vscode from "./assets/tech/vscode.png";
 import vmware from "./assets/tech/vmware.png";
 import winscp from "./assets/tech/winscp.png";
 import xaml from "./assets/tech/xaml.png";
+import yaml from "./assets/tech/yaml.png";
 
 // Importing Project images
 import nfl from "./assets/projects/NFL.png";
@@ -163,6 +166,10 @@ export const languages: Technology[] = [
     name: "XAML",
     icon: xaml,
   },
+  {
+    name: "YAML",
+    icon: yaml,
+  },
 ];
 
 export const librariesFrameworks: Technology[] = [
@@ -178,6 +185,10 @@ export const librariesFrameworks: Technology[] = [
   {
     name: "LangChain",
     icon: langchain,
+  },
+  {
+    name: "LangGraph",
+    icon: langgraph,
   },
   {
     name: "Llama Index",
@@ -258,6 +269,12 @@ export const tools: Technology[] = [
     name: "MinIO",
     icon: minio,
   },
+  {
+    name: "Neo4j",
+    icon: neo4j,
+    hasRoundedCorners: true,
+  },
+
   {
     name: "PuTTy",
     icon: putty,
